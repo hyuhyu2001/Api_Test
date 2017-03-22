@@ -15,7 +15,7 @@ from public import base
 class TestAccountUserRegister(unittest.TestCase):
     def setUp(self):
         self.url = HttpService.MyHTTP().get_url('community/post/pubPost')
-        self.token = base.userlogin('15210110149','123456')
+        self.token = base.userlogin('15210110149','000')
 
     def test_post_pubPost(self):
         '''发图文帖成功'''

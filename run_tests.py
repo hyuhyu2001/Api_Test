@@ -18,12 +18,7 @@ from email.mime.multipart import MIMEMultipart
 import smtplib
 
 def send_email(filename):
-    mail_host='SMTP.cloud-young.com'#smtp.exmail.qq.com
-    mail_user='jinzj@cloud-young.com'
-    mail_pass='Jrty132615'
 
-    sender='jinzj@cloud-young.com'
-    receivers=['jinzj@cloud-young.com']
 
     message = MIMEMultipart('related')
 
