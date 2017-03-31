@@ -6,6 +6,7 @@
 @desc:数据库连接获取信息
 """
 import sys
+sys.path.append('./public')
 import pymysql
 from public import Config
 

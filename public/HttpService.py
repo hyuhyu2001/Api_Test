@@ -6,9 +6,12 @@
 配置文件
 """
 
+import sys
 import requests
 import json as j
+sys.path.append('./public')
 from public import Config
+
 
 class MyHTTP(object):
     def __init__(self):

@@ -11,6 +11,8 @@
 """
 
 import unittest
+import sys
+sys.path.append('./public')
 from public import HttpService
 from public import SqlService
 from public import base

@@ -9,13 +9,15 @@
 """
 
 import unittest
+import sys
+sys.path.append('./public')
 from public import HttpService
 from public import base
 
 class TestAccountUserRegister(unittest.TestCase):
     def setUp(self):
         self.url = HttpService.MyHTTP().get_url('community/post/pubPost')
-        self.token = base.userlogin('15210110149','000')
+        self.token = base.userlogin('15210110149','123456')
 
     def test_post_pubPost(self):
         '''发图文帖成功'''

@@ -18,7 +18,12 @@ from email.mime.multipart import MIMEMultipart
 import smtplib
 
 def send_email(filename):
+    mail_host='smtp.exmail.qq.com'#SMTP.cloud-young.com
+    mail_user='jinzj@cloud-young.com'
+    mail_pass='Jrty132615'
 
+    sender='jinzj@cloud-young.com'
+    receivers=['jinzj@cloud-young.com']
 
     message = MIMEMultipart('related')
 
@@ -52,7 +57,7 @@ def report(testreport):
 
 
 # 指定测试用例为当前文件夹下的 interface 目录
-test_dir = './interface'
+test_dir = './test_case'
 discover = unittest.defaultTestLoader.discover(test_dir, pattern='*_test.py')
 
 if __name__ == "__main__":

@@ -11,6 +11,8 @@
 """
 
 import unittest
+import sys
+sys.path.append('./public')
 from public import HttpService
 
 class TestAccountLogin(unittest.TestCase):
@@ -19,7 +21,7 @@ class TestAccountLogin(unittest.TestCase):
 
     def test_account_Login(self):
         '''校验状态是否登陆成功'''
-        params = { 'mobile': '15210110149','password': '000'}
+        params = { 'mobile': '15210110149','password': '123456'}
         text = HttpService.MyHTTP().get(self.url, **params)
 
         result = text.get('result')

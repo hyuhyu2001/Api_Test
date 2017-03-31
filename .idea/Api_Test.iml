@@ -9,6 +9,7 @@
     <orderEntry type="module" module-name="python_study" />
     <orderEntry type="module" module-name="python_study" />
     <orderEntry type="module" module-name="Monkey_automation" />
+    <orderEntry type="module" module-name="Web_Test_Selenium" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />
