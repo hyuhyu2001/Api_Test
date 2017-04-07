@@ -9,11 +9,16 @@ import json
 from public import HttpService
 from public import base
 
-'''
 #get测试
-url = HttpService.MyHTTP().get_url('account/userLogin')
-params = {'mobile': '15210110149', 'password': '123456'}
-text = HttpService.MyHTTP().get(url, **params)
+postId = 45280
+url = HttpService.MyHTTP().get_url('community/post/publicPost/%s' %postId)
+token = base.userlogin('15210110149', '123456')
+headers = {'token': ''}
+# userId = base.bs64('1023886')
+params = {'title': '公共贴'}
+headers = {'deviceType': 'ios', 'platformNo': 'ios', 'token':token}
+DataAll = {'params': params, 'headers': headers}
+text = HttpService.MyHTTP().get(url, **DataAll)
 print(text)
 '''
 
@@ -42,6 +47,7 @@ print(text)
 # text = HttpService.MyHTTP().post(url, **DataAll)
 # print(text)
 
+'''
 
 
 

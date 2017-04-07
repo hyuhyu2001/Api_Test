@@ -21,10 +21,12 @@ class MyHTTP(object):
         url = '/'.join([self.url,endpoint])
         return url
 
-    def get(self, url, **params):
+    def get(self, url, **DataAll):
         '''封装HTTP GET请求方法'''
+        headers = DataAll.get('headers')
+        params = DataAll.get('params')
         try:
-            response = requests.get(url, params=params, timeout=3)
+            response = requests.get(url,headers=headers,params=params, timeout=3)
             text = j.loads(response.text)  # 由unicode转换为dict格式 也可以用response.json()直接生成dict格式
             return text
         except Exception as e:
@@ -32,15 +34,27 @@ class MyHTTP(object):
             return {}
 
     def post(self,url,**DataAll):
+        params = DataAll.get('params')
         headers = DataAll.get('headers')
         data = DataAll.get('data')
         json = DataAll.get('json')
         files = DataAll.get('files')
         try:
-            response = requests.post(url=url,headers=headers,data=data,json=json,files=files,timeout=3)
+            response = requests.post(url=url,params=params,headers=headers,data=data,json=json,files=files,timeout=3)
             text = j.loads(response.text)
             return text
         except Exception as e:
             print('post错误：%s' % e)
             return {}
 
+    def delete(self, url, **DataAll):
+        '''封装HTTP delete请求方法'''
+        headers = DataAll.get('headers')
+        params = DataAll.get('params')
+        try:
+            response = requests.delete(url,headers=headers,params=params, timeout=3)
+            text = j.loads(response.text)  # 由unicode转换为dict格式 也可以用response.json()直接生成dict格式
+            return text
+        except Exception as e:
+            print('get错误：%s' % e)
+            return {}

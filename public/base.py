@@ -6,6 +6,8 @@
 @desc:
 """
 import requests
+import base64
+import hashlib
 from public import HttpService
 from public import SqlService
 import json
@@ -26,8 +28,8 @@ def userlogin(mobile,password):
     '''登陆账号并获取token'''
     url = HttpService.MyHTTP().get_url('account/userLogin')
     params = {'mobile': mobile, 'password':password}
-
-    text = HttpService.MyHTTP().get(url, **params)
+    DataAll = { 'params': params}
+    text = HttpService.MyHTTP().get(url, **DataAll)
     token = text.get(u'data').get(u'token')
     return token
 
@@ -41,3 +43,14 @@ def userLogout(token):
 
     result = text.get(u'result')
     return result
+
+def bs64(s):
+    #base64加密
+    bstr=base64.b64encode(s.encode(encoding='utf-8'))
+    dstr=bstr.decode()
+    return dstr
+
+def md5(s):
+    m = hashlib.md5()
+    m.update(s.encode(encoding="utf-8"))
+    return m.hexdigest()

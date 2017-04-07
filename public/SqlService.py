@@ -47,18 +47,18 @@ class MyDB(object):
             print('查询失败：%s' %e)
             self.conn.rollback()
 
-    def execute_insert(self, query, data):
+    def execute_insert(self, sql):
         try:
-            self.cur.execute(query, data)
+            self.cur.execute(sql)
             self.conn.commit()
             return True
         except Exception as e:
             self.conn.rollback()
 
-    def execute_update(self, query, data):
-        query = query % data
+    def execute_update(self, sql):
+        # query = query % data
         try:
-            self.cur.execute(query)
+            self.cur.execute(sql)
             self.conn.commit()
             return ('',True)
         except Exception as e:

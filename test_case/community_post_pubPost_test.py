@@ -14,7 +14,7 @@ sys.path.append('./public')
 from public import HttpService
 from public import base
 
-class TestAccountUserRegister(unittest.TestCase):
+class CommunityPostPubPost(unittest.TestCase):
     def setUp(self):
         self.url = HttpService.MyHTTP().get_url('community/post/pubPost')
         self.token = base.userlogin('15210110149','123456')
