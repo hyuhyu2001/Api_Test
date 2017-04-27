@@ -20,7 +20,7 @@ import smtplib
 def send_email(filename):
     mail_host='smtp.exmail.qq.com'#SMTP.cloud-young.com
     mail_user='jinzj@cloud-young.com'
-    mail_pass='Jrty132615'
+    mail_pass='Jinzj1'
 
     sender='jinzj@cloud-young.com'
     receivers=['jinzj@cloud-young.com']
