@@ -12,6 +12,7 @@ from public import HttpService
 from public import base
 
 class AccountGetUserFriends(unittest.TestCase):
+    '''查询好友列表'''
     def setUp(self):
         self.url = HttpService.MyHTTP().get_url('account/getUserFriends')
         self.token = base.userlogin('15210110149', '123456')

@@ -191,9 +191,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Ling Ling Bang Interface Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-03-31 14:40:58</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:03.739475</p>
-<p class='attribute'><strong>Status:</strong> Pass 9</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-04-27 15:11:23</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:09.828248</p>
+<p class='attribute'><strong>Status:</strong> Pass 25</p>
 
 <p class='description'>The results are following:</p>
 </div>
@@ -224,69 +224,69 @@ function showOutput(id, name) {
 </tr>
 
 <tr class='passClass'>
-    <td>account_userRegister_test.TestAccountUserRegister</td>
-    <td>2</td>
-    <td>2</td>
+    <td>account_getInvitedList_test.AccountGetInvitedList: 获取用户通讯录测试</td>
+    <td>1</td>
+    <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c1',2)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_account_UserRegister: 正常注册</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr id='pt1.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_account_UserRegister_mobile: 手机号不能为空</div></td>
+    <td class='none'><div class='testcase'>test_get_InvitedList: 成功获取通讯录好友</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
 <tr class='passClass'>
-    <td>account_userlogin_test.TestAccountLogin</td>
-    <td>4</td>
-    <td>4</td>
+    <td>account_getUserFriends_test.AccountGetUserFriends: 查询好友列表</td>
+    <td>2</td>
+    <td>2</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c2',4)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c2',2)">Detail</a></td>
 </tr>
 
 <tr id='pt2.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_account_Login: 校验状态是否登陆成功</div></td>
+    <td class='none'><div class='testcase'>test_get_user_friends_other: 查询他人用户好友列表</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
 <tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_user_friends_own: 查询自己用户好友列表</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>account_userLogin_test.AccountUserLogin</td>
+    <td>4</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',4)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_Login: 校验状态是否登陆成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_account_Login_mobile: 校验手机号为空</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr id='pt2.3' class='hiddenRow'>
+<tr id='pt3.3' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_account_Login_password_01: 校验密码为空</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr id='pt2.4' class='hiddenRow'>
+<tr id='pt3.4' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_account_Login_password_02: 校验密码错误</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
 <tr class='passClass'>
-    <td>complaint_user_test.ComplaintUser</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
-</tr>
-
-<tr id='pt3.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_complaint_user: 校验举报是否成功</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr class='passClass'>
-    <td>post_pubPost_test.TestAccountUserRegister</td>
+    <td>account_userRegister_test.AccountUserRegister</td>
     <td>2</td>
     <td>2</td>
     <td>0</td>
@@ -295,21 +295,87 @@ function showOutput(id, name) {
 </tr>
 
 <tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_UserRegister: 正常注册</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_UserRegister_mobile: 手机号不能为空</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_channel_attendedChannels_test.CommunityChannelAttendedChannels</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_channel_getattended_users: 正常退出社区</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_channel_attendedUsers_test.CommunityChannelAttendedUsers</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',2)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_attended_users_notoken: 无token，无分页</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt6.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_attended_users_token: 有token，有分页</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_channel_recommendChannelToFriends_test.CommunityChannelRecommendChannelToFriends</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recommend_channel_tofriends: 向好友推荐社区成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_pubPost_test.CommunityPostPubPost</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',2)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_post_pubPost: 发图文帖成功</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
         pass</a>
 
-    <div id='div_pt4.1' class="popup_window">
+    <div id='div_pt8.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt4.1: True
+pt8.1: True
 
 
         </pre>
@@ -319,15 +385,119 @@ pt4.1: True
     </td>
 </tr>
 
-<tr id='pt4.2' class='hiddenRow'>
+<tr id='pt8.2' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_post_pubPost_token: token不能为空</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_publicPost_test.CommunityPostPublicPost</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_public_post: 帖子公告成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_unCollectPost_test.CommunityPostUnCollectPost</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_UnCollect_post: 帖子取消收藏成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>message_logs_logRecord_test.MessageLogsLogRecord</td>
+    <td>3</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',3)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_record_notoken: 无token，上传失败</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt11.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_record_space: 日志为空</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt11.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_record_token: 有token，上传成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>ugc_comment_acceptComment_test.UgcCommentAcceptComment</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c12',2)">Detail</a></td>
+</tr>
+
+<tr id='pt12.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_comment_acceptcomment_notoken: 无token，采纳回复不成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt12.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_comment_acceptcomment_token: 有token，采纳回复成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>ugc_comment_commentPost_test.UgcCommentCommentPost</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c13',2)">Detail</a></td>
+</tr>
+
+<tr id='pt13.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_comment_post_notoken: 无token，回复不成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_comment_post_token: 有token，回复成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>ugc_complaint_complaintUser_test.UgcComplaintComplaintUser</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
+</tr>
+
+<tr id='pt14.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_complaint_user: 校验举报是否成功</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>9</td>
-    <td class="text text-success">9</td>
+    <td>25</td>
+    <td class="text text-success">25</td>
     <td class="text text-danger">0</td>
     <td class="text text-warning">0</td>
     <td>&nbsp;</td>

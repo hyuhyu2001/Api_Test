@@ -12,6 +12,7 @@ from public import HttpService
 from public import base
 
 class AccountGetInvitedList(unittest.TestCase):
+    '''获取用户通讯录测试'''
     def setUp(self):
         self.url = HttpService.MyHTTP().get_url('account/getInvitedList')
         self.token = base.userlogin('15210110149', '123456')
