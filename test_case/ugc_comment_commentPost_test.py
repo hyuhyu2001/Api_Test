@@ -12,6 +12,7 @@ from public import HttpService
 from public import base
 
 class UgcCommentCommentPost(unittest.TestCase):
+    '''评论帖子'''
     def setUp(self):
         self.postId = 45271
         self.url = HttpService.MyHTTP().get_url('ugc/comment/commentPost/%s'%self.postId)

@@ -12,6 +12,7 @@ from public import SqlService
 from public import base
 
 class CommunityPostUnCollectPost(unittest.TestCase):
+    '''帖子取消收藏'''
     def setUp(self):
         self.postId = 45280
         self.url = HttpService.MyHTTP().get_url('community/post/unCollectPost/%s'%self.postId)

@@ -13,6 +13,7 @@ from public import SqlService
 from public import base
 
 class CommunityChannelAttendedChannels(unittest.TestCase):
+    '''退出社区'''
     def setUp(self):
         self.channelId = 306
         self.url = HttpService.MyHTTP().get_url('community/channel/attendedChannels/%s'%self.channelId)

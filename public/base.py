@@ -10,7 +10,9 @@ import base64
 import hashlib
 from public import HttpService
 from public import SqlService
+from public import read_excel
 import json
+
 
 def test_account_getRegisterSmsCode(mobile):
     '''获取短信验证码'''
@@ -54,3 +56,22 @@ def md5(s):
     m = hashlib.md5()
     m.update(s.encode(encoding="utf-8"))
     return m.hexdigest()
+
+def get_response(url,RequestMethod,**DataAll):
+    RequestMethod = RequestMethod.lower()
+    if RequestMethod == 'get':
+        text = HttpService.MyHTTP().get(url, **DataAll)
+    elif RequestMethod == 'post':
+        text = HttpService.MyHTTP().post(url, **DataAll)
+    elif RequestMethod == 'delete':
+        text = HttpService.MyHTTP().delete(url, **DataAll)
+    return text
+
+def get_url(EndPoint):
+    url = HttpService.MyHTTP().get_url(EndPoint)
+    return url
+
+def get_data(testfile,sheetname):
+    datainfo = read_excel.XLDataInfo( r'D:\python_pycharmWorkspace\python36\Api_Test\test_data\%s'%testfile)
+    Data = datainfo.get_sheetinfo_by_name(sheetname)
+    return Data

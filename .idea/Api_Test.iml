@@ -12,6 +12,7 @@
     <orderEntry type="module" module-name="Web_Test_Selenium" />
     <orderEntry type="module" module-name="BBS_community_Selenium" />
     <orderEntry type="module" module-name="BBS_community_Selenium" />
+    <orderEntry type="module" module-name="Performance_Test" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />

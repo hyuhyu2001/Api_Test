@@ -22,8 +22,9 @@ self.charset = config[db]['charset']
 def url():
     Environment = 'test'
     if Environment == 'test':  #测试环境
-        url = 'http://apitest.00bang.net:8081'
-        # url = 'http://apitest2.00bang.net'
+        # url = 'http://apitest.00bang.net:8081'
+        url = 'http://apitest2.00bang.net'
+        # url = 'http://apidev.00bang.net/'
     elif Environment == 'pre':  #预发布环境
         url = 'https://apipre.00bang.net'
     elif Environment == 'release':  #正式环境

@@ -10,14 +10,12 @@ from public import HttpService
 from public import base
 
 #get测试
-postId = 45280
-url = HttpService.MyHTTP().get_url('community/post/publicPost/%s' %postId)
+url = HttpService.MyHTTP().get_url('community/post/techPostLabels')#community/post/listPostLabels
 token = base.userlogin('15210110149', '123456')
-headers = {'token': ''}
-# userId = base.bs64('1023886')
-params = {'title': '公共贴'}
-headers = {'deviceType': 'ios', 'platformNo': 'ios', 'token':token}
-DataAll = {'params': params, 'headers': headers}
+headers = {'token': token}
+# userId = base.bs64('1023886') 'token':token,
+params = {'labelType': 1, 'pageNo': '1', 'pageSize': '5'}
+DataAll = {'params': params,'headers': headers}
 text = HttpService.MyHTTP().get(url, **DataAll)
 print(text)
 '''

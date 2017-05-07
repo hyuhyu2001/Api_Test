@@ -11,6 +11,7 @@ from public import HttpService
 from public import base
 
 class CommunityChannelRecommendChannelToFriends(unittest.TestCase):
+    '''向好友推荐社区'''
     def setUp(self):
         self.url = HttpService.MyHTTP().get_url('community/channel/recommendChannelToFriends')
         self.token = base.userlogin('15210110149', '123456')

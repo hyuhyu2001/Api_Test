@@ -12,6 +12,7 @@ from public import HttpService
 from public import base
 
 class CommunityChannelAttendedUsers(unittest.TestCase):
+    '''社区成员列表'''
     def setUp(self):
         self.channelId = 306
         self.url = HttpService.MyHTTP().get_url('community/channel/attendedUsers/%s'%self.channelId)

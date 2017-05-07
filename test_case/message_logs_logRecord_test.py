@@ -12,6 +12,7 @@ from public import HttpService
 from public import base
 
 class MessageLogsLogRecord(unittest.TestCase):
+    '''APP上传日志'''
     def setUp(self):
         self.settings=[{"LogId":734,"clientRecordDate":1486558077043,"logLevel":"error","logType":3,"requestParam":"","requestUrl":"https://api.00bang.net/community/post/columns","responseData":"code:502"}]
         self.url = HttpService.MyHTTP().get_url('message/logs/logRecord/')

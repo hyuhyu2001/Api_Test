@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 """
 @author:     jinzj
 @desc:
@@ -8,55 +7,45 @@
 接口类型：http
 请求地址：rootUrl/account/userLogin
 请求方式：POST GET
+增加数据驱动框架ddt
 """
 
 import unittest
 import sys
+from ddt import ddt,data,unpack
 sys.path.append('./public')
-from public import HttpService
+from public import base
 
+testcasefile = 'account_userLogin_test_data.xlsx'
+AllData = base.get_data(testcasefile, 'AllData')
+TestDatainfo = base.get_data(testcasefile, 'TestData')
+EndPoint = AllData[1][1]
+RequestMethod = AllData[1][2]
+RequestData = AllData[1][3]
+TestData = tuple(TestDatainfo[1:])
+
+@ddt
 class AccountUserLogin(unittest.TestCase):
+    '''登陆测试'''
     def setUp(self):
-        self.url = HttpService.MyHTTP().get_url('account/userLogin')
+        self.url = base.get_url(EndPoint)
 
-    def test_account_Login(self):
-        '''校验状态是否登陆成功'''
-        params = { 'mobile': '15210110149','password': '123456'}
-        DataAll = {'params': params}
-        text = HttpService.MyHTTP().get(self.url, **DataAll)
+    @data(*TestData)
+    @unpack
+    def test_account_Login(self,mobile,password,expectedresult):
+        DataAll = eval(RequestData)
+        text = base.get_response(self.url,RequestMethod,**DataAll)
 
-        result = text.get('result')
-        self.assertEqual(result,True)
-
-    def test_account_Login_mobile(self):
-        '''校验手机号为空'''
-        params = { 'mobile': '','password': '123456'}
-        DataAll = {'params': params}
-        text = HttpService.MyHTTP().get(self.url, **DataAll)
-
-        errorMessage = text.get(u'errorMessage')
-        self.assertEqual(errorMessage,u'手机号不能为空!') #需要加U
-
-    def test_account_Login_password_01(self):
-        '''校验密码为空'''
-        params = {'mobile': '15210110149','password': ''}
-        DataAll = {'params': params}
-        text = HttpService.MyHTTP().get(self.url, **DataAll)
-
-        errorMessage = text.get(u'errorMessage')
-        self.assertEqual(errorMessage,u'密码不能为空!')
-
-    def test_account_Login_password_02(self):
-        '''校验密码错误'''
-        params = {'mobile': '15210110149','password': '12dasd3'}
-        DataAll = {'params': params}
-        text = HttpService.MyHTTP().get(self.url, **DataAll)
-
-        errorMessage = text.get(u'errorMessage')
-        self.assertEqual(errorMessage,u'密码错误!')
+        if expectedresult.lower() == 'true':
+            result = text.get('result')
+            self.assertEqual(result,True)
+        else:
+            errorMessage = text.get(u'errorMessage')
+            self.assertEqual(errorMessage, expectedresult)
 
     def tearDown(self):
         pass
 
 if __name__ == "__main__":
     unittest.main()
+

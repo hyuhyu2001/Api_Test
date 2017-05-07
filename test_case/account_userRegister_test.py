@@ -19,6 +19,7 @@ from public import base
 
 
 class AccountUserRegister(unittest.TestCase):
+    '''用户注册'''
     def setUp(self):
         self.url = HttpService.MyHTTP().get_url('account/userRegister')
 

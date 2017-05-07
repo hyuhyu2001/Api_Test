@@ -12,6 +12,7 @@ from public import HttpService
 from public import base
 
 class UgcComplaintComplaintUser(unittest.TestCase):
+    '''社区用户举报'''
     def setUp(self):
         self.url = HttpService.MyHTTP().get_url('ugc/complaint/complaintUser')
         self.token = base.userlogin('15210110149', '123456')

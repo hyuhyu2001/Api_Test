@@ -12,6 +12,7 @@ from public import SqlService
 from public import base
 
 class UgcCommentAcceptComment(unittest.TestCase):
+    '''技师问题，采纳回复'''
     def setUp(self):
         self.commentId = 212854
         self.commentTargetId = 45271

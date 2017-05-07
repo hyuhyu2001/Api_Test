@@ -13,6 +13,7 @@ from public import SqlService
 from public import base
 
 class CommunityPostPublicPost(unittest.TestCase):
+    '''帖子公告'''
     def setUp(self):
         self.postId = 45280
         self.url = HttpService.MyHTTP().get_url('community/post/publicPost/%s'%self.postId)
