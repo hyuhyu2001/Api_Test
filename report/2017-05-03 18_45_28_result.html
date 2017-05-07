@@ -1,0 +1,1878 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ling Ling Bang Interface Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Ling Ling Bang Interface Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-05-03 18:45:28</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:23.499984</p>
+<p class='attribute'><strong>Status:</strong> Pass 48 Failure 30</p>
+
+<p class='description'>The results are following:</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)' class="btn btn-xs btn-primary">Summary</a>
+<a href='javascript:showCase(1)' class="btn btn-xs btn-danger">Failed</a>
+<a href='javascript:showCase(2)' class="btn btn-xs btn-info">All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>account_getInvitedList_test.AccountGetInvitedList: 获取用户通讯录测试</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_InvitedList: 成功获取通讯录好友</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>account_getUserFriends_test.AccountGetUserFriends: 查询好友列表</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',2)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_user_friends_other: 查询他人用户好友列表</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_user_friends_own: 查询自己用户好友列表</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>account_userLogin_test.AccountUserLogin: 登陆测试</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',5)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_Login_1___15210110149____123456____True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_Login_2___15801006286____123456____True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_Login_3_______123456____手机号不能为空___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_Login_4___15210110149________密码不能为空___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_Login_5___15210110149____12dasd3____密码错误___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>account_userRegister_test.AccountUserRegister</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',2)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_UserRegister: 正常注册</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_UserRegister_mobile: 手机号不能为空</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='failClass'>
+    <td>baseinfo_advertise_getAdvertiseByPageCode_test.BaseinfoAdvertiseGetAdvertiseByPageCode: 通过页面编码获得相应的广告</td>
+    <td>10</td>
+    <td>0</td>
+    <td>10</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',10)">Detail</a></td>
+</tr>
+
+<tr id='ft5.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPageCode_10_______9____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
+        fail</a>
+
+    <div id='div_ft5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.1: get错误：Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPageCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPageCode
+    self.assertEqual(result,True)
+AssertionError: None != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPageCode_1___token____1____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.2')" >
+        fail</a>
+
+    <div id='div_ft5.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.2: get错误：Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPageCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPageCode
+    self.assertEqual(result,True)
+AssertionError: None != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPageCode_2_______1____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.3')" >
+        fail</a>
+
+    <div id='div_ft5.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.3: get错误：Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPageCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPageCode
+    self.assertEqual(result,True)
+AssertionError: None != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.4' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPageCode_3___token____2____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.4')" >
+        fail</a>
+
+    <div id='div_ft5.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.4: get错误：Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPageCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPageCode
+    self.assertEqual(result,True)
+AssertionError: None != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.5' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPageCode_4___token____3____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.5')" >
+        fail</a>
+
+    <div id='div_ft5.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.5: get错误：Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPageCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPageCode
+    self.assertEqual(result,True)
+AssertionError: None != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.6' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPageCode_5_______4____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.6')" >
+        fail</a>
+
+    <div id='div_ft5.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.6: get错误：Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPageCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPageCode
+    self.assertEqual(result,True)
+AssertionError: None != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.7' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPageCode_6_______5____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.7')" >
+        fail</a>
+
+    <div id='div_ft5.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.7: get错误：Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPageCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPageCode
+    self.assertEqual(result,True)
+AssertionError: None != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.8' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPageCode_7_______6____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.8')" >
+        fail</a>
+
+    <div id='div_ft5.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.8: get错误：Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPageCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPageCode
+    self.assertEqual(result,True)
+AssertionError: None != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.9' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPageCode_8_______7____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.9')" >
+        fail</a>
+
+    <div id='div_ft5.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.9: get错误：Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPageCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPageCode
+    self.assertEqual(result,True)
+AssertionError: None != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.10' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPageCode_9_______8____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.10')" >
+        fail</a>
+
+    <div id='div_ft5.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.10: get错误：Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPageCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPageCode
+    self.assertEqual(result,True)
+AssertionError: None != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>baseinfo_advertise_getAdvertiseByPositionCode_test.BaseinfoAdvertiseGetAdvertiseByPositionCode: 获取广告位编码对应的广告列表</td>
+    <td>20</td>
+    <td>0</td>
+    <td>20</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',20)">Detail</a></td>
+</tr>
+
+<tr id='ft6.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_10_______9____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
+        fail</a>
+
+    <div id='div_ft6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.1: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_11_______10____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.2')" >
+        fail</a>
+
+    <div id='div_ft6.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.2: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_12_______11____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.3')" >
+        fail</a>
+
+    <div id='div_ft6.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.3: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.4' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_13_______12____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.4')" >
+        fail</a>
+
+    <div id='div_ft6.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.4: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.5' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_14_______13____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.5')" >
+        fail</a>
+
+    <div id='div_ft6.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.5: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.6' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_15_______14____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.6')" >
+        fail</a>
+
+    <div id='div_ft6.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.6: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.7' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_16_______15____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.7')" >
+        fail</a>
+
+    <div id='div_ft6.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.7: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.8' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_17_______16____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.8')" >
+        fail</a>
+
+    <div id='div_ft6.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.8: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.9' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_18_______17____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.9')" >
+        fail</a>
+
+    <div id='div_ft6.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.9: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.10' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_19_______18____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.10')" >
+        fail</a>
+
+    <div id='div_ft6.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.10: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.11' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_1___token____1____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.11')" >
+        fail</a>
+
+    <div id='div_ft6.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.11: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.12' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_20_______19____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.12')" >
+        fail</a>
+
+    <div id='div_ft6.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.12: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.13' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_2_______1____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.13')" >
+        fail</a>
+
+    <div id='div_ft6.13' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.13: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.14' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_3___token____2____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.14')" >
+        fail</a>
+
+    <div id='div_ft6.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.14: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.15' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_4___token____3____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.15')" >
+        fail</a>
+
+    <div id='div_ft6.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.15: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.16' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_5_______4____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.16')" >
+        fail</a>
+
+    <div id='div_ft6.16' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.16').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.16: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.17' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_6_______5____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.17')" >
+        fail</a>
+
+    <div id='div_ft6.17' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.17').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.17: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.18' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_7_______6____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.18')" >
+        fail</a>
+
+    <div id='div_ft6.18' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.18').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.18: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.19' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_8_______7____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.19')" >
+        fail</a>
+
+    <div id='div_ft6.19' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.19').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.19: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.20' class='none'>
+    <td class='failCase'><div class='testcase'>test_baseinfo_advertise_getAdvertiseByPositionCode_9_______8____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.20')" >
+        fail</a>
+
+    <div id='div_ft6.20' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.20').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.20: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\baseinfo_advertise_getAdvertiseByPositionCode_test.py", line 41, in test_baseinfo_advertise_getAdvertiseByPositionCode
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>baseinfo_functionicon_llbAppFunctionIconList_test.BaseinfoFunctioniconLlbAppFunctionIconList: 菱菱邦首页功能图标</td>
+    <td>8</td>
+    <td>8</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',8)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_baseinfo_functionicon_llbAppFunctionIconList_1___token____1____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: {'result': True, 'data': {'appType': 'llb', 'categoryName': '首页保客', 'rows': 2, 'columns': 5, 'haveMore': 1, 'appFunctionIcons': [{'appFunctionIconId': 1, 'appFunctionIconCategoryId': 1, 'functionIconName': '金牌技师', 'functionIconDesc': '金牌技师', 'functionIconUrl': 'https://dftest.00bang.net/images/T1v.ETByxT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 100, 'triggerType': 4, 'creationDate': 1493698563000, 'anchorCode': 45, 'needLogin': 0}, {'appFunctionIconId': 2, 'appFunctionIconCategoryId': 1, 'functionIconName': '客服MM', 'functionIconDesc': '客服MM', 'functionIconUrl': 'https://dftest.00bang.net/images/T1PVKTBCxT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 90, 'triggerType': 5, 'creationDate': 1493698563000, 'anchorCode': 13, 'needLogin': 0}, {'appFunctionIconId': 3, 'appFunctionIconCategoryId': 1, 'functionIconName': '评价特权', 'functionIconDesc': '评价特权', 'functionIconUrl': 'https://dftest.00bang.net/images/T1WCKTBCDT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 80, 'triggerType': 1, 'triggerValue': 'https://mtest.00bang.net/llb/html/prerogativeAppraisal/prerogativeAppraisal.html', 'creationDate': 1493698563000, 'anchorCode': 48, 'needLogin': 0}, {'appFunctionIconId': 4, 'appFunctionIconCategoryId': 1, 'functionIconName': '首保激活', 'functionIconDesc': '首保激活', 'functionIconUrl': 'https://dftest.00bang.net/images/T1v5ETByxT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 70, 'triggerType': 1, 'triggerValue': 'https://mtest.00bang.net/llb/html/insurance/insurance.html', 'creationDate': 1493698563000, 'anchorCode': 49, 'needLogin': 0}, {'appFunctionIconId': 5, 'appFunctionIconCategoryId': 1, 'functionIconName': '违章查询', 'functionIconDesc': '违章查询', 'functionIconUrl': 'https://dftest.00bang.net/images/T1WEKTBQVv1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 60, 'triggerType': 6, 'creationDate': 1493698563000, 'anchorCode': 17, 'needLogin': 0}, {'appFunctionIconId': 6, 'appFunctionIconCategoryId': 1, 'functionIconName': '生活服务', 'functionIconDesc': '生活服务', 'functionIconUrl': 'https://dftest.00bang.net/images/T1WVKTBCdT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 50, 'triggerType': 1, 'triggerValue': 'https://mtest.00bang.net/llb/html/life/lifeList.html', 'creationDate': 1493698563000, 'anchorCode': 61, 'needLogin': 0}, {'appFunctionIconId': 7, 'appFunctionIconCategoryId': 1, 'functionIconName': '预约服务', 'functionIconDesc': '预约服务', 'functionIconUrl': 'https://dftest.00bang.net/images/T1vkETByxT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 40, 'triggerType': 7, 'creationDate': 1493698563000, 'anchorCode': 66, 'needLogin': 0}, {'appFunctionIconId': 8, 'appFunctionIconCategoryId': 1, 'functionIconName': '有奖签到', 'functionIconDesc': '有奖签到', 'functionIconUrl': 'https://dftest.00bang.net/images/T1WZKTBQVv1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 30, 'triggerType': 8, 'creationDate': 1493698563000, 'anchorCode': 50, 'needLogin': 0}, {'appFunctionIconId': 9, 'appFunctionIconCategoryId': 1, 'functionIconName': '积分兑换', 'functionIconDesc': '积分兑换', 'functionIconUrl': 'https://dftest.00bang.net/images/T1qEKTBCYT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 20, 'triggerType': 1, 'triggerValue': 'https://mtest.00bang.net/llb/html/welfare/goods.html', 'creationDate': 1493698563000, 'anchorCode': 51, 'needLogin': 0}, {'appFunctionIconId': 17, 'appFunctionIconCategoryId': 1, 'functionIconName': '更多', 'functionIconDesc': '更多', 'functionIconUrl': 'https://dftest.00bang.net/images/T1boETByxT1RCvBVdK.png', 'isMore': 1, 'status': 1, 'ord': 1, 'triggerType': 15, 'creationDate': 1493698564000, 'anchorCode': 52, 'needLogin': 0}]}, 'systemDate': '2017-05-03 18:45:50', 'systemTimeMillis': 1493808350043}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt7.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_baseinfo_functionicon_llbAppFunctionIconList_2_______1____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.2')" >
+        pass</a>
+
+    <div id='div_pt7.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.2: {'result': True, 'data': {'appType': 'llb', 'categoryName': '首页保客', 'rows': 2, 'columns': 5, 'haveMore': 1, 'appFunctionIcons': [{'appFunctionIconId': 1, 'appFunctionIconCategoryId': 1, 'functionIconName': '金牌技师', 'functionIconDesc': '金牌技师', 'functionIconUrl': 'https://dftest.00bang.net/images/T1v.ETByxT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 100, 'triggerType': 4, 'creationDate': 1493698563000, 'anchorCode': 45, 'needLogin': 0}, {'appFunctionIconId': 2, 'appFunctionIconCategoryId': 1, 'functionIconName': '客服MM', 'functionIconDesc': '客服MM', 'functionIconUrl': 'https://dftest.00bang.net/images/T1PVKTBCxT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 90, 'triggerType': 5, 'creationDate': 1493698563000, 'anchorCode': 13, 'needLogin': 0}, {'appFunctionIconId': 3, 'appFunctionIconCategoryId': 1, 'functionIconName': '评价特权', 'functionIconDesc': '评价特权', 'functionIconUrl': 'https://dftest.00bang.net/images/T1WCKTBCDT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 80, 'triggerType': 1, 'triggerValue': 'https://mtest.00bang.net/llb/html/prerogativeAppraisal/prerogativeAppraisal.html', 'creationDate': 1493698563000, 'anchorCode': 48, 'needLogin': 0}, {'appFunctionIconId': 4, 'appFunctionIconCategoryId': 1, 'functionIconName': '首保激活', 'functionIconDesc': '首保激活', 'functionIconUrl': 'https://dftest.00bang.net/images/T1v5ETByxT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 70, 'triggerType': 1, 'triggerValue': 'https://mtest.00bang.net/llb/html/insurance/insurance.html', 'creationDate': 1493698563000, 'anchorCode': 49, 'needLogin': 0}, {'appFunctionIconId': 5, 'appFunctionIconCategoryId': 1, 'functionIconName': '违章查询', 'functionIconDesc': '违章查询', 'functionIconUrl': 'https://dftest.00bang.net/images/T1WEKTBQVv1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 60, 'triggerType': 6, 'creationDate': 1493698563000, 'anchorCode': 17, 'needLogin': 0}, {'appFunctionIconId': 6, 'appFunctionIconCategoryId': 1, 'functionIconName': '生活服务', 'functionIconDesc': '生活服务', 'functionIconUrl': 'https://dftest.00bang.net/images/T1WVKTBCdT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 50, 'triggerType': 1, 'triggerValue': 'https://mtest.00bang.net/llb/html/life/lifeList.html', 'creationDate': 1493698563000, 'anchorCode': 61, 'needLogin': 0}, {'appFunctionIconId': 7, 'appFunctionIconCategoryId': 1, 'functionIconName': '预约服务', 'functionIconDesc': '预约服务', 'functionIconUrl': 'https://dftest.00bang.net/images/T1vkETByxT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 40, 'triggerType': 7, 'creationDate': 1493698563000, 'anchorCode': 66, 'needLogin': 0}, {'appFunctionIconId': 8, 'appFunctionIconCategoryId': 1, 'functionIconName': '有奖签到', 'functionIconDesc': '有奖签到', 'functionIconUrl': 'https://dftest.00bang.net/images/T1WZKTBQVv1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 30, 'triggerType': 8, 'creationDate': 1493698563000, 'anchorCode': 50, 'needLogin': 0}, {'appFunctionIconId': 9, 'appFunctionIconCategoryId': 1, 'functionIconName': '积分兑换', 'functionIconDesc': '积分兑换', 'functionIconUrl': 'https://dftest.00bang.net/images/T1qEKTBCYT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 20, 'triggerType': 1, 'triggerValue': 'https://mtest.00bang.net/llb/html/welfare/goods.html', 'creationDate': 1493698563000, 'anchorCode': 51, 'needLogin': 0}, {'appFunctionIconId': 17, 'appFunctionIconCategoryId': 1, 'functionIconName': '更多', 'functionIconDesc': '更多', 'functionIconUrl': 'https://dftest.00bang.net/images/T1boETByxT1RCvBVdK.png', 'isMore': 1, 'status': 1, 'ord': 1, 'triggerType': 15, 'creationDate': 1493698564000, 'anchorCode': 52, 'needLogin': 0}]}, 'systemDate': '2017-05-03 18:45:50', 'systemTimeMillis': 1493808350333}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt7.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_baseinfo_functionicon_llbAppFunctionIconList_3___token____2____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.3')" >
+        pass</a>
+
+    <div id='div_pt7.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.3: {'result': True, 'data': {'appType': 'llb', 'categoryName': '首页潜客', 'rows': 1, 'columns': 5, 'haveMore': 0, 'appFunctionIcons': [{'appFunctionIconId': 18, 'appFunctionIconCategoryId': 2, 'functionIconName': '选车', 'functionIconDesc': '选车', 'functionIconUrl': 'https://dftest.00bang.net/images/T1qZKTBCZT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 100, 'triggerType': 16, 'creationDate': 1493698564000, 'anchorCode': 72, 'needLogin': 0}, {'appFunctionIconId': 19, 'appFunctionIconCategoryId': 2, 'functionIconName': '购车专家', 'functionIconDesc': '购车专家', 'functionIconUrl': 'https://dftest.00bang.net/images/T1qCKTBCDT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 90, 'triggerType': 19, 'creationDate': 1493698564000, 'anchorCode': 75, 'needLogin': 0}, {'appFunctionIconId': 20, 'appFunctionIconCategoryId': 2, 'functionIconName': '金融顾问', 'functionIconDesc': '金融顾问', 'functionIconUrl': 'https://dftest.00bang.net/images/T1lZKTBCZT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 80, 'triggerType': 20, 'creationDate': 1493698564000, 'anchorCode': 76, 'needLogin': 0}, {'appFunctionIconId': 21, 'appFunctionIconCategoryId': 2, 'functionIconName': '直播试驾', 'functionIconDesc': '直播试驾', 'functionIconUrl': 'https://dftest.00bang.net/images/T1lEKTBCdT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 70, 'triggerType': 17, 'creationDate': 1493698564000, 'anchorCode': 73, 'needLogin': 0}, {'appFunctionIconId': 22, 'appFunctionIconCategoryId': 2, 'functionIconName': '问老司机', 'functionIconDesc': '问老司机', 'functionIconUrl': 'https://dftest.00bang.net/images/T1b.ETByxT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 60, 'triggerType': 18, 'creationDate': 1493698564000, 'anchorCode': 74, 'needLogin': 0}]}, 'systemDate': '2017-05-03 18:45:50', 'systemTimeMillis': 1493808350637}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt7.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_baseinfo_functionicon_llbAppFunctionIconList_4___token____3____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.4')" >
+        pass</a>
+
+    <div id='div_pt7.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.4: {'result': True, 'data': {'appType': 'llb', 'categoryName': '挑神车', 'rows': 1, 'columns': 4, 'haveMore': 0, 'appFunctionIcons': [{'appFunctionIconId': 23, 'appFunctionIconCategoryId': 3, 'functionIconName': '选车', 'functionIconDesc': '选车', 'functionIconUrl': 'https://dftest.00bang.net/images/T1b.ETByZT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 100, 'triggerType': 16, 'creationDate': 1493698564000, 'anchorCode': 72, 'needLogin': 0}, {'appFunctionIconId': 24, 'appFunctionIconCategoryId': 3, 'functionIconName': '优惠券', 'functionIconDesc': '优惠券', 'functionIconUrl': 'https://dftest.00bang.net/images/T1qCKTBCYT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 90, 'triggerType': 1, 'creationDate': 1493698564000, 'anchorCode': 77, 'needLogin': 0}, {'appFunctionIconId': 25, 'appFunctionIconCategoryId': 3, 'functionIconName': '金融购车', 'functionIconDesc': '金融购车', 'functionIconUrl': 'https://dftest.00bang.net/images/T1lZKTBCdT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 80, 'triggerType': 21, 'creationDate': 1493698564000, 'anchorCode': 78, 'needLogin': 0}, {'appFunctionIconId': 26, 'appFunctionIconCategoryId': 3, 'functionIconName': '全能顾问', 'functionIconDesc': '全能顾问', 'functionIconUrl': 'https://dftest.00bang.net/images/T1b5ETByZT1RCvBVdK.png', 'isMore': 0, 'status': 1, 'ord': 70, 'triggerType': 22, 'creationDate': 1493698564000, 'anchorCode': 79, 'needLogin': 0}]}, 'systemDate': '2017-05-03 18:45:50', 'systemTimeMillis': 1493808350905}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt7.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_baseinfo_functionicon_llbAppFunctionIconList_5___token________请求参数不合法_请检查参数__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.5')" >
+        pass</a>
+
+    <div id='div_pt7.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.5: {'result': False, 'errorCode': '-23001', 'errorMessage': '请求参数不合法，请检查参数', 'systemDate': '2017-05-03 18:45:51', 'systemTimeMillis': 1493808351189}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt7.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_baseinfo_functionicon_llbAppFunctionIconList_6___token____4____请求参数不合法_请检查参数__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.6')" >
+        pass</a>
+
+    <div id='div_pt7.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.6: {'result': False, 'errorCode': '-23001', 'errorMessage': '请求参数不合法，请检查参数', 'systemDate': '2017-05-03 18:45:51', 'systemTimeMillis': 1493808351473}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt7.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_baseinfo_functionicon_llbAppFunctionIconList_7___token_____1____请求参数不合法_请检查参数__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.7')" >
+        pass</a>
+
+    <div id='div_pt7.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.7: {'result': False, 'errorCode': '-23001', 'errorMessage': '请求参数不合法，请检查参数', 'systemDate': '2017-05-03 18:45:51', 'systemTimeMillis': 1493808351755}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt7.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_baseinfo_functionicon_llbAppFunctionIconList_8___token____9999999999999____请求参数不合法_请检查参数__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.8')" >
+        pass</a>
+
+    <div id='div_pt7.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.8: {'result': False, 'errorCode': '-23001', 'errorMessage': '请求参数不合法，请检查参数', 'systemDate': '2017-05-03 18:45:52', 'systemTimeMillis': 1493808352049}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_channel_attendedChannels_test.CommunityChannelAttendedChannels</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_channel_getattended_users: 正常退出社区</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_channel_attendedUsers_test.CommunityChannelAttendedUsers</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',2)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_attended_users_notoken: 无token，无分页</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt9.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_attended_users_token: 有token，有分页</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_channel_recommendChannelToFriends_test.CommunityChannelRecommendChannelToFriends</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recommend_channel_tofriends: 向好友推荐社区成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_myQaPosts_test.CommunityPostMyQaPosts: 我的提问</td>
+    <td>4</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',4)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_1___token____tech____1________True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.1')" >
+        pass</a>
+
+    <div id='div_pt11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.1: {'result': True, 'data': [{'postId': 45422, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 13, 'postLabelId': 1, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493808135000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45418, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 13, 'postLabelId': 1, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493790746000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45408, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 13, 'postLabelId': 1, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493721017000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45403, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 13, 'postLabelId': 1, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493719788000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45381, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 13, 'postLabelId': 1, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493713889000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 44779, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 32, 'postLabelId': 4, 'postContent': '[{"text":"摸摸主题猪头"}]', 'status': 1, 'postShowCount': 67, 'postShowRealCount': 4, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1487064110000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 1, 'postCommentCount': 1, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['摸摸主题猪头'], 'imgTexts': [{'text': '摸摸主题猪头'}]}, {'postId': 44764, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 32, 'postLabelId': 4, 'postContent': '[{"text":"陌路KKK"}]', 'status': 1, 'postShowCount': 30, 'postShowRealCount': 2, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1486971465000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 1, 'postCommentCount': 1, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['陌路KKK'], 'imgTexts': [{'text': '陌路KKK'}]}, {'postId': 44589, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"嗯弄"}]', 'status': 1, 'postShowCount': 303, 'postShowRealCount': 39, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1483692945000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 6, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['嗯弄'], 'imgTexts': [{'text': '嗯弄'}]}, {'postId': 44552, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'postContent': '[{"text":"哦信誉图"}]', 'status': 1, 'postShowCount': 33, 'postShowRealCount': 4, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1483432249000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 1, 'postCommentCount': 1, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['哦信誉图'], 'imgTexts': [{'text': '哦信誉图'}]}, {'postId': 44549, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"佛家阿东"}]', 'status': 1, 'postShowCount': 60, 'postShowRealCount': 9, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1483082377000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 1, 'postCommentCount': 3, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['佛家阿东'], 'imgTexts': [{'text': '佛家阿东'}]}, {'postId': 44547, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 3, 'postContent': '[{"text":"理亏好来咯"}]', 'status': 1, 'postShowCount': 0, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1483081805000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['理亏好来咯'], 'imgTexts': [{'text': '理亏好来咯'}]}, {'postId': 44442, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"咪咪流浪记"}]', 'status': 1, 'postShowCount': 50, 'postShowRealCount': 4, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1481702704000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['咪咪流浪记'], 'imgTexts': [{'text': '咪咪流浪记'}]}], 'systemDate': '2017-05-03 18:45:53', 'systemTimeMillis': 1493808353547}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt11.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_2___token____channel____1____5____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.2')" >
+        pass</a>
+
+    <div id='div_pt11.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.2: {'result': True, 'data': [{'postId': 45421, 'forwardPostId': 0, 'postTypeId': 1, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493808135000, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 306, 'channelName': '深夜魅影', 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45417, 'forwardPostId': 0, 'postTypeId': 1, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 22, 'postShowRealCount': 2, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493790745000, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 306, 'channelName': '深夜魅影', 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45407, 'forwardPostId': 0, 'postTypeId': 1, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493720987000, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 306, 'channelName': '深夜魅影', 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45402, 'forwardPostId': 0, 'postTypeId': 1, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493719761000, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 306, 'channelName': '深夜魅影', 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 44778, 'forwardPostId': 0, 'postTypeId': 1, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"分www五嗯哦哦"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":""}]', 'status': 1, 'postShowCount': 99, 'postShowRealCount': 12, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1487063908000, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 306, 'channelName': '深夜魅影', 'postPraiseCount': 1, 'postCommentCount': 4, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['分www五嗯哦哦'], 'imgTexts': [{'text': '分www五嗯哦哦'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': ''}]}], 'systemDate': '2017-05-03 18:45:53', 'systemTimeMillis': 1493808353944}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt11.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_3_______tech____1____5____token不能为空___</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.3')" >
+        pass</a>
+
+    <div id='div_pt11.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.3: {'result': False, 'errorCode': '-40009', 'errorMessage': 'token不能为空!', 'data': None, 'systemDate': '2017-05-03 18:45:54', 'systemTimeMillis': 1493808354253}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt11.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_4___token____driver____1____5____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.4')" >
+        pass</a>
+
+    <div id='div_pt11.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.4: {'result': True, 'data': [{'postId': 45423, 'forwardPostId': 0, 'postTypeId': 3, 'channelInfoId': 1, 'rewardId': 0, 'postLabelId': 14, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493808135000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45419, 'forwardPostId': 0, 'postTypeId': 3, 'channelInfoId': 1, 'rewardId': 0, 'postLabelId': 14, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493790746000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45409, 'forwardPostId': 0, 'postTypeId': 3, 'channelInfoId': 1, 'rewardId': 0, 'postLabelId': 14, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493721045000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45404, 'forwardPostId': 0, 'postTypeId': 3, 'channelInfoId': 1, 'rewardId': 0, 'postLabelId': 14, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493719816000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45384, 'forwardPostId': 0, 'postTypeId': 3, 'channelInfoId': 1, 'rewardId': 0, 'postLabelId': 14, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493714155000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}], 'systemDate': '2017-05-03 18:45:54', 'systemTimeMillis': 1493808354554}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_oldDriverPostLabels_test.CommunityPostOldDriverPostLabels: 提问老司机问题标签</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c12',2)">Detail</a></td>
+</tr>
+
+<tr id='pt12.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_postlist_oldDriverPostLabels_1___token____2____1____5____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt12.1')" >
+        pass</a>
+
+    <div id='div_pt12.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt12.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt12.1: {'result': True, 'data': [{'postLabelId': 14, 'labelName': '油耗', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 15, 'labelName': '外观内饰', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 16, 'labelName': '配置', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 17, 'labelName': '空间', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 18, 'labelName': '动力', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 19, 'labelName': '金融分期', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}], 'systemDate': '2017-05-03 18:45:54', 'systemTimeMillis': 1493808354847}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt12.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_postlist_oldDriverPostLabels_2_______2____1____5____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt12.2')" >
+        pass</a>
+
+    <div id='div_pt12.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt12.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt12.2: {'result': True, 'data': [{'postLabelId': 14, 'labelName': '油耗', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 15, 'labelName': '外观内饰', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 16, 'labelName': '配置', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 17, 'labelName': '空间', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 18, 'labelName': '动力', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 19, 'labelName': '金融分期', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}], 'systemDate': '2017-05-03 18:45:55', 'systemTimeMillis': 1493808355134}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_pubPost_test.CommunityPostPubPost: 发帖测试</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c13',5)">Detail</a></td>
+</tr>
+
+<tr id='pt13.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_post_pubPost_1___token____android____Android____306_______text____超级便宜的衣服特卖了f000good_____img____T1tVKTB4bT1RCvBVdK_jpg____width____922____height____1280____text____大家快来看啦_顶顶顶_______0________________True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_post_pubPost_2___token____iphone____IOS____306_______text____超级便宜的衣服特卖了f000good_____img____T1tVKTB4bT1RCvBVdK_jpg____width____922____height____1280____text____大家快来看啦_顶顶顶_______1________________True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_post_pubPost_3___token____android____Android____306_______text____超级便宜的衣服特卖了f000good_____img____T1tVKTB4bT1RCvBVdK_jpg____width____922____height____1280____text____大家快来看啦_顶顶顶_______2____1____13____1____True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_post_pubPost_4___token____android____Android____306_______text____超级便宜的衣服特卖了f000good_____img____T1tVKTB4bT1RCvBVdK_jpg____width____922____height____1280____text____大家快来看啦_顶顶顶_______3____________14____True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_post_pubPost_5_______android____Android____306_______text____超级便宜的衣服特卖了f000good_____img____T1tVKTB4bT1RCvBVdK_jpg____width____922____height____1280____text____大家快来看啦_顶顶顶_______0________________token不能为空___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_publicPost_test.CommunityPostPublicPost</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
+</tr>
+
+<tr id='pt14.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_public_post: 帖子公告成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_qaPosts_test.CommunityPostMyQaPosts: 问答首页帖子列表</td>
+    <td>4</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c15',4)">Detail</a></td>
+</tr>
+
+<tr id='pt15.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_1___token____tech____1________True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt15.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_2___token____channel____1____5____True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt15.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_3_______tech____1____5____token不能为空___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt15.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_4___token____driver____1____5____True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_techPostLabels_test.CommunityPostTechPostLabels: 提问技师问题标签</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c16',1)">Detail</a></td>
+</tr>
+
+<tr id='pt16.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_postlist_techPostLabels: 提问技师问题标签</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt16.1')" >
+        pass</a>
+
+    <div id='div_pt16.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt16.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt16.1: {'result': True, 'data': [{'postLabelId': 1, 'labelName': '车辆保养', 'labelType': 1, 'status': 1, 'creationDate': 1486350809000, 'lastModifyedDate': 1491896445000, 'lastModifyedUserId': 1009433}, {'postLabelId': 2, 'labelName': '故障维修', 'labelType': 1, 'status': 1, 'creationDate': 1486350809000}, {'postLabelId': 3, 'labelName': '二手车', 'labelType': 1, 'status': 1, 'creationDate': 1486350809000, 'lastModifyedDate': 1491915599000, 'lastModifyedUserId': 1009433}, {'postLabelId': 4, 'labelName': '车辆使用', 'labelType': 1, 'status': 1, 'creationDate': 1486350810000}, {'postLabelId': 5, 'labelName': '购车提车', 'labelType': 1, 'status': 1, 'creationDate': 1486350810000, 'lastModifyedDate': 1486624635000, 'lastModifyedUserId': 1032803}], 'systemDate': '2017-05-03 18:45:58', 'systemTimeMillis': 1493808358952}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_unCollectPost_test.CommunityPostUnCollectPost</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c17',1)">Detail</a></td>
+</tr>
+
+<tr id='pt17.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_UnCollect_post: 帖子取消收藏成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>message_logs_logRecord_test.MessageLogsLogRecord</td>
+    <td>3</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c18',3)">Detail</a></td>
+</tr>
+
+<tr id='pt18.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_record_notoken: 无token，上传失败</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt18.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_record_space: 日志为空</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt18.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_record_token: 有token，上传成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>ugc_comment_acceptComment_test.UgcCommentAcceptComment</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c19',2)">Detail</a></td>
+</tr>
+
+<tr id='pt19.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_comment_acceptcomment_notoken: 无token，采纳回复不成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt19.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_comment_acceptcomment_token: 有token，采纳回复成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>ugc_comment_commentPost_test.UgcCommentCommentPost</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c20',2)">Detail</a></td>
+</tr>
+
+<tr id='pt20.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_comment_post_notoken: 无token，回复不成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt20.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_comment_post_token: 有token，回复成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>ugc_complaint_complaintUser_test.UgcComplaintComplaintUser</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c21',1)">Detail</a></td>
+</tr>
+
+<tr id='pt21.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_complaint_user: 校验举报是否成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>78</td>
+    <td class="text text-success">48</td>
+    <td class="text text-danger">30</td>
+    <td class="text text-warning">0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

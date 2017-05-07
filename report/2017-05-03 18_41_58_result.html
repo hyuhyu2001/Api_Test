@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ling Ling Bang Interface Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Ling Ling Bang Interface Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-05-03 18:41:58</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:12.671109</p>
+<p class='attribute'><strong>Status:</strong> Pass 40 Error 5</p>
+
+<p class='description'>The results are following:</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)' class="btn btn-xs btn-primary">Summary</a>
+<a href='javascript:showCase(1)' class="btn btn-xs btn-danger">Failed</a>
+<a href='javascript:showCase(2)' class="btn btn-xs btn-info">All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>AllTestCase_test.AccountUserLogin: 登陆测试</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td>5</td>
+    <td><a href="javascript:showClassDetail('c1',5)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_Login_1___15210110149____123456____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\AllTestCase_test.py", line 33, in test_account_Login
+    DataAll = eval(RequestData)
+  File "&lt;string&gt;", line 1, in &lt;module&gt;
+NameError: name 'mobile' is not defined
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_Login_2___15801006286____123456____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        error</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.2: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\AllTestCase_test.py", line 33, in test_account_Login
+    DataAll = eval(RequestData)
+  File "&lt;string&gt;", line 1, in &lt;module&gt;
+NameError: name 'mobile' is not defined
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_Login_3_______123456____手机号不能为空___</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
+        error</a>
+
+    <div id='div_ft1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.3: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\AllTestCase_test.py", line 33, in test_account_Login
+    DataAll = eval(RequestData)
+  File "&lt;string&gt;", line 1, in &lt;module&gt;
+NameError: name 'mobile' is not defined
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.4' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_Login_4___15210110149________密码不能为空___</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.4')" >
+        error</a>
+
+    <div id='div_ft1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.4: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\AllTestCase_test.py", line 33, in test_account_Login
+    DataAll = eval(RequestData)
+  File "&lt;string&gt;", line 1, in &lt;module&gt;
+NameError: name 'mobile' is not defined
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.5' class='none'>
+    <td class='errorCase'><div class='testcase'>test_account_Login_5___15210110149____12dasd3____密码错误___</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
+        error</a>
+
+    <div id='div_ft1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.5: Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\AllTestCase_test.py", line 33, in test_account_Login
+    DataAll = eval(RequestData)
+  File "&lt;string&gt;", line 1, in &lt;module&gt;
+NameError: name 'mobile' is not defined
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>account_getInvitedList_test.AccountGetInvitedList: 获取用户通讯录测试</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_InvitedList: 成功获取通讯录好友</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>account_getUserFriends_test.AccountGetUserFriends: 查询好友列表</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',2)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_user_friends_other: 查询他人用户好友列表</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_user_friends_own: 查询自己用户好友列表</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>account_userLogin_test.AccountUserLogin: 登陆测试</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',5)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_Login_1___15210110149____123456____True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_Login_2___15801006286____123456____True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_Login_3_______123456____手机号不能为空___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_Login_4___15210110149________密码不能为空___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_Login_5___15210110149____12dasd3____密码错误___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>account_userRegister_test.AccountUserRegister</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',2)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_UserRegister: 正常注册</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_account_UserRegister_mobile: 手机号不能为空</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_channel_attendedChannels_test.CommunityChannelAttendedChannels</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_channel_getattended_users: 正常退出社区</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_channel_attendedUsers_test.CommunityChannelAttendedUsers</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',2)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_attended_users_notoken: 无token，无分页</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt7.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_attended_users_token: 有token，有分页</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_channel_recommendChannelToFriends_test.CommunityChannelRecommendChannelToFriends</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recommend_channel_tofriends: 向好友推荐社区成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_myQaPosts_test.CommunityPostMyQaPosts: 我的提问</td>
+    <td>4</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',4)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_1___token____tech____1________True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.1: {'result': True, 'data': [{'postId': 45418, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 13, 'postLabelId': 1, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493790746000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45408, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 13, 'postLabelId': 1, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493721017000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45403, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 13, 'postLabelId': 1, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493719788000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45381, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 13, 'postLabelId': 1, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493713889000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 44779, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 32, 'postLabelId': 4, 'postContent': '[{"text":"摸摸主题猪头"}]', 'status': 1, 'postShowCount': 67, 'postShowRealCount': 4, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1487064110000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 1, 'postCommentCount': 1, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['摸摸主题猪头'], 'imgTexts': [{'text': '摸摸主题猪头'}]}, {'postId': 44764, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 32, 'postLabelId': 4, 'postContent': '[{"text":"陌路KKK"}]', 'status': 1, 'postShowCount': 30, 'postShowRealCount': 2, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1486971465000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 1, 'postCommentCount': 1, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['陌路KKK'], 'imgTexts': [{'text': '陌路KKK'}]}, {'postId': 44589, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"嗯弄"}]', 'status': 1, 'postShowCount': 303, 'postShowRealCount': 39, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1483692945000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 6, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['嗯弄'], 'imgTexts': [{'text': '嗯弄'}]}, {'postId': 44552, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'postContent': '[{"text":"哦信誉图"}]', 'status': 1, 'postShowCount': 33, 'postShowRealCount': 4, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1483432249000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 1, 'postCommentCount': 1, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['哦信誉图'], 'imgTexts': [{'text': '哦信誉图'}]}, {'postId': 44549, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"佛家阿东"}]', 'status': 1, 'postShowCount': 60, 'postShowRealCount': 9, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1483082377000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 1, 'postCommentCount': 3, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['佛家阿东'], 'imgTexts': [{'text': '佛家阿东'}]}, {'postId': 44547, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 3, 'postContent': '[{"text":"理亏好来咯"}]', 'status': 1, 'postShowCount': 0, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1483081805000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['理亏好来咯'], 'imgTexts': [{'text': '理亏好来咯'}]}, {'postId': 44442, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"咪咪流浪记"}]', 'status': 1, 'postShowCount': 50, 'postShowRealCount': 4, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1481702704000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['咪咪流浪记'], 'imgTexts': [{'text': '咪咪流浪记'}]}], 'systemDate': '2017-05-03 18:42:12', 'systemTimeMillis': 1493808132021}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt9.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_2___token____channel____1____5____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.2')" >
+        pass</a>
+
+    <div id='div_pt9.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.2: {'result': True, 'data': [{'postId': 45417, 'forwardPostId': 0, 'postTypeId': 1, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 22, 'postShowRealCount': 2, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493790745000, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 306, 'channelName': '深夜魅影', 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45407, 'forwardPostId': 0, 'postTypeId': 1, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493720987000, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 306, 'channelName': '深夜魅影', 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45402, 'forwardPostId': 0, 'postTypeId': 1, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493719761000, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 306, 'channelName': '深夜魅影', 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 44778, 'forwardPostId': 0, 'postTypeId': 1, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"分www五嗯哦哦"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":""}]', 'status': 1, 'postShowCount': 99, 'postShowRealCount': 12, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1487063908000, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 306, 'channelName': '深夜魅影', 'postPraiseCount': 1, 'postCommentCount': 4, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['分www五嗯哦哦'], 'imgTexts': [{'text': '分www五嗯哦哦'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': ''}]}, {'postId': 44765, 'forwardPostId': 0, 'postTypeId': 1, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"咯哦哦哦们"}]', 'status': 1, 'postShowCount': 53, 'postShowRealCount': 6, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1486973495000, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 306, 'channelName': '深夜魅影', 'postPraiseCount': 1, 'postCommentCount': 2, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['咯哦哦哦们'], 'imgTexts': [{'text': '咯哦哦哦们'}]}], 'systemDate': '2017-05-03 18:42:12', 'systemTimeMillis': 1493808132386}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt9.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_3_______tech____1____5____token不能为空___</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.3')" >
+        pass</a>
+
+    <div id='div_pt9.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.3: {'result': False, 'errorCode': '-40009', 'errorMessage': 'token不能为空!', 'data': None, 'systemDate': '2017-05-03 18:42:12', 'systemTimeMillis': 1493808132677}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt9.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_4___token____driver____1____5____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.4')" >
+        pass</a>
+
+    <div id='div_pt9.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.4: {'result': True, 'data': [{'postId': 45419, 'forwardPostId': 0, 'postTypeId': 3, 'channelInfoId': 1, 'rewardId': 0, 'postLabelId': 14, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493790746000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45409, 'forwardPostId': 0, 'postTypeId': 3, 'channelInfoId': 1, 'rewardId': 0, 'postLabelId': 14, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493721045000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45404, 'forwardPostId': 0, 'postTypeId': 3, 'channelInfoId': 1, 'rewardId': 0, 'postLabelId': 14, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493719816000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45384, 'forwardPostId': 0, 'postTypeId': 3, 'channelInfoId': 1, 'rewardId': 0, 'postLabelId': 14, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493714155000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}, {'postId': 45382, 'forwardPostId': 0, 'postTypeId': 3, 'channelInfoId': 1, 'rewardId': 0, 'postLabelId': 14, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1001757, 'creationDate': 1493714009000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '闲人gg啊啊kjj', 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'userIdStr': 'MTAwMTc1Nw==', 'carTypeStr': '宝骏610 CROSS', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg'], 'imgWidths': ['922'], 'imgHeights': ['1280'], 'texts': ['超级便宜的衣服特卖了f000good', '大家快来看啦，顶顶顶'], 'imgTexts': [{'text': '超级便宜的衣服特卖了f000good'}, {'img': 'https://dftest.00bang.net/images/T1tVKTB4bT1RCvBVdK.jpg', 'width': '922', 'height': '1280', 'text': '大家快来看啦，顶顶顶'}]}], 'systemDate': '2017-05-03 18:42:12', 'systemTimeMillis': 1493808132989}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_oldDriverPostLabels_test.CommunityPostOldDriverPostLabels: 提问老司机问题标签</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',2)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_postlist_oldDriverPostLabels_1___token____2____1____5____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
+        pass</a>
+
+    <div id='div_pt10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.1: {'result': True, 'data': [{'postLabelId': 14, 'labelName': '油耗', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 15, 'labelName': '外观内饰', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 16, 'labelName': '配置', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 17, 'labelName': '空间', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 18, 'labelName': '动力', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 19, 'labelName': '金融分期', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}], 'systemDate': '2017-05-03 18:42:13', 'systemTimeMillis': 1493808133419}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt10.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_postlist_oldDriverPostLabels_2_______2____1____5____True__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.2')" >
+        pass</a>
+
+    <div id='div_pt10.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.2: {'result': True, 'data': [{'postLabelId': 14, 'labelName': '油耗', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 15, 'labelName': '外观内饰', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 16, 'labelName': '配置', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 17, 'labelName': '空间', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 18, 'labelName': '动力', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}, {'postLabelId': 19, 'labelName': '金融分期', 'labelType': 2, 'status': 1, 'creationDate': 1493698366000}], 'systemDate': '2017-05-03 18:42:13', 'systemTimeMillis': 1493808133699}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_pubPost_test.CommunityPostPubPost: 发帖测试</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',5)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_post_pubPost_1___token____android____Android____306_______text____超级便宜的衣服特卖了f000good_____img____T1tVKTB4bT1RCvBVdK_jpg____width____922____height____1280____text____大家快来看啦_顶顶顶_______0________________True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt11.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_post_pubPost_2___token____iphone____IOS____306_______text____超级便宜的衣服特卖了f000good_____img____T1tVKTB4bT1RCvBVdK_jpg____width____922____height____1280____text____大家快来看啦_顶顶顶_______1________________True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt11.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_post_pubPost_3___token____android____Android____306_______text____超级便宜的衣服特卖了f000good_____img____T1tVKTB4bT1RCvBVdK_jpg____width____922____height____1280____text____大家快来看啦_顶顶顶_______2____1____13____1____True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt11.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_post_pubPost_4___token____android____Android____306_______text____超级便宜的衣服特卖了f000good_____img____T1tVKTB4bT1RCvBVdK_jpg____width____922____height____1280____text____大家快来看啦_顶顶顶_______3____________14____True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt11.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_post_pubPost_5_______android____Android____306_______text____超级便宜的衣服特卖了f000good_____img____T1tVKTB4bT1RCvBVdK_jpg____width____922____height____1280____text____大家快来看啦_顶顶顶_______0________________token不能为空___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_publicPost_test.CommunityPostPublicPost</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c12',1)">Detail</a></td>
+</tr>
+
+<tr id='pt12.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_public_post: 帖子公告成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_qaPosts_test.CommunityPostMyQaPosts: 问答首页帖子列表</td>
+    <td>4</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c13',4)">Detail</a></td>
+</tr>
+
+<tr id='pt13.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_1___token____tech____1________True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_2___token____channel____1____5____True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_3_______tech____1____5____token不能为空___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_post_myQaPosts_4___token____driver____1____5____True__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_techPostLabels_test.CommunityPostTechPostLabels: 提问技师问题标签</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
+</tr>
+
+<tr id='pt14.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_community_postlist_techPostLabels: 提问技师问题标签</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt14.1')" >
+        pass</a>
+
+    <div id='div_pt14.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt14.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt14.1: {'result': True, 'data': [{'postLabelId': 1, 'labelName': '车辆保养', 'labelType': 1, 'status': 1, 'creationDate': 1486350809000, 'lastModifyedDate': 1491896445000, 'lastModifyedUserId': 1009433}, {'postLabelId': 2, 'labelName': '故障维修', 'labelType': 1, 'status': 1, 'creationDate': 1486350809000}, {'postLabelId': 3, 'labelName': '二手车', 'labelType': 1, 'status': 1, 'creationDate': 1486350809000, 'lastModifyedDate': 1491915599000, 'lastModifyedUserId': 1009433}, {'postLabelId': 4, 'labelName': '车辆使用', 'labelType': 1, 'status': 1, 'creationDate': 1486350810000}, {'postLabelId': 5, 'labelName': '购车提车', 'labelType': 1, 'status': 1, 'creationDate': 1486350810000, 'lastModifyedDate': 1486624635000, 'lastModifyedUserId': 1032803}], 'systemDate': '2017-05-03 18:42:17', 'systemTimeMillis': 1493808137591}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>community_post_unCollectPost_test.CommunityPostUnCollectPost</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c15',1)">Detail</a></td>
+</tr>
+
+<tr id='pt15.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_UnCollect_post: 帖子取消收藏成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>message_logs_logRecord_test.MessageLogsLogRecord</td>
+    <td>3</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c16',3)">Detail</a></td>
+</tr>
+
+<tr id='pt16.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_record_notoken: 无token，上传失败</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt16.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_record_space: 日志为空</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt16.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_record_token: 有token，上传成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>ugc_comment_acceptComment_test.UgcCommentAcceptComment</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c17',2)">Detail</a></td>
+</tr>
+
+<tr id='pt17.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_comment_acceptcomment_notoken: 无token，采纳回复不成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt17.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_comment_acceptcomment_token: 有token，采纳回复成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>ugc_comment_commentPost_test.UgcCommentCommentPost</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c18',2)">Detail</a></td>
+</tr>
+
+<tr id='pt18.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_comment_post_notoken: 无token，回复不成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt18.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_comment_post_token: 有token，回复成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>ugc_complaint_complaintUser_test.UgcComplaintComplaintUser</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c19',1)">Detail</a></td>
+</tr>
+
+<tr id='pt19.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_complaint_user: 校验举报是否成功</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>45</td>
+    <td class="text text-success">40</td>
+    <td class="text text-danger">0</td>
+    <td class="text text-warning">5</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
