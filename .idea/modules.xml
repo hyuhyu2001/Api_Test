@@ -3,9 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Api_Test.iml" filepath="$PROJECT_DIR$/.idea/Api_Test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../BBS_community_Selenium/.idea/BBS_community_Selenium.iml" filepath="$PROJECT_DIR$/../BBS_community_Selenium/.idea/BBS_community_Selenium.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../Training/.idea/Training.iml" filepath="$PROJECT_DIR$/../Training/.idea/Training.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../test_code/.idea/llbTest.iml" filepath="$PROJECT_DIR$/../test_code/.idea/llbTest.iml" />
     </modules>
   </component>
 </project>
