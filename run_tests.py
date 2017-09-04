@@ -16,10 +16,12 @@ from email.mime.text import MIMEText
 from email.header import Header
 from email.mime.multipart import MIMEMultipart
 import smtplib
+import xlrd
+from public import SqlService
 
 def send_email(filename):
     mail_host='smtp.exmail.qq.com'#SMTP.cloud-young.com
-    mail_user='jinzj@cloud-young.com'
+    mail_user='********'
     mail_pass='Jinzj1'
 
     sender='jinzj@cloud-young.com'
@@ -56,12 +58,31 @@ def report(testreport): #查找最新的测试报告
     print(filename)
     return filename
 
+def get_sql_info(file):
+    path=r'D:\python_pycharmWorkspace\python36\Api_Test\test_data\%s'%file
+    wk=xlrd.open_workbook(path)
+    sheet=wk.sheet_by_name('TestData')
+    col=sheet.ncols
+    val=sheet.col_values(col-1)
+    return val
 
 if __name__ == "__main__":
     # test_data.init_data() # 初始化接口测试数据
     # 指定测试用例为当前文件夹下的 interface 目录
     test_dir = './test_case'
-    discover = unittest.defaultTestLoader.discover(test_dir, pattern='*_test.py')
+    discover = unittest.defaultTestLoader.discover(test_dir, pattern='AllTestCase.py')
+    #运行测试前清理数据
+    filename=os.listdir(r'D:\python_pycharmWorkspace\python36\Api_Test\test_data')
+    sqllist=[]
+    for i in range(0,len(filename)):
+        testcasefile = filename[i]
+        sqlinfo = get_sql_info(testcasefile)
+        sqllist=sqllist+sqlinfo[1:]
+    DB = SqlService.MyDB()
+    for sql in sqllist:
+        if sql!='':
+            DB.execute_delete(sql)
+    DB.close()
 
     now = time.strftime("%Y-%m-%d %H_%M_%S")
     filename = './report/' + now + '_result.html'
@@ -72,6 +93,6 @@ if __name__ == "__main__":
     runner.run(discover)
     fp.close()
 
-    test_report = './report' #定义报告文件目录
-    rep = report(test_report)
-    send_email(rep)
+    # test_report = './report' #定义报告文件目录
+    # rep = report(test_report)
+    # send_email(rep)

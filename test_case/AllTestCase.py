@@ -3,47 +3,100 @@
 @author:     jinzj
 @desc:
 接口分类：个人中心HTTP接口
-增加数据驱动框架ddt,将params、testdata等封装在excel中,将接口全部封装在一起
+接口名称：用户登录
+接口类型：http
+请求地址：rootUrl/account/userLogin
+请求方式：POST GET
+增加数据驱动框架ddt
 """
 
 import unittest
-import sys
+import sys,os
 from ddt import ddt,data,unpack
 sys.path.append('./public')
 from public import base
+from public import SqlService
 
-testcasefile = 'account_userLogin_test_data.xlsx'
-AllData = base.get_data(testcasefile,'AllData')
-TestDatainfo = base.get_data(testcasefile,'TestData')
-EndPoint = AllData[1][1]
-RequestMethod = AllData[1][2]
-RequestData = AllData[1][3]
-ParamsData = tuple(TestDatainfo[0:1][0])
-TestData = tuple(TestDatainfo[1:])
-
+#读取所有excel的用例数据
+filename=os.listdir(r'D:\python_pycharmWorkspace\python36\Api_Test\test_data')
+TestData=[]
+for i in range(0,len(filename)):
+    testcasefile = filename[i]
+    TestDatainfo = base.get_data(testcasefile, 'TestData')
+    TestData=TestData+TestDatainfo[1:]
 @ddt
 class AccountUserLogin(unittest.TestCase):
-    '''登陆测试'''
+    '''接口自动化测试'''
     def setUp(self):
-        self.url = base.get_url(EndPoint)
+        pass
 
     @data(*TestData)
     @unpack
-    def test_account_Login(self,*ParamsData):
-        DataAll = eval(RequestData)
-        text = base.get_response(self.url,RequestMethod,**DataAll)
-        for i in ParamsData:
-            i = i
-        expectedresult = ParamsData[-1]
-        if expectedresult.lower() == 'true':
-            result = text.get('result')
-            self.assertEqual(result,True)
+    def test_llb(self,endPoint,requestMethod,other,requestData,token,expectedresult,path,*args):
+        tok=eval(token)
+        if tok['token']=='token':
+            mobile=tok['mobile']
+            password=tok['password']
+            token=base.userlogin(mobile,password)
         else:
-            errorMessage = text.get(u'errorMessage')
-            self.assertEqual(errorMessage, expectedresult)
+            token=tok['token']
+        #DataAll = eval(requestData)
+        url=base.get_url(endPoint)
+        #判断是否需要其他接口数据
+        if other!='':
+            other_data=eval(other)
+            other_url=base.get_url(other_data['endpoint'])
+            other_method=other_data['requestmethod']
+            other_dataAll=other_data['para']
+            sql=other_data['sql']
+            other_path=other_data['path']
+            #判断是否通过查询数据库获取数据
+            if sql!='':
+                base.get_response(other_url+other_path,other_method,**other_dataAll)
+                DB = SqlService.MyDB()
+                res=DB.execute_select_one(sql)
+                DB.close()
+                DataAll = eval(requestData)
+                self.text = base.get_response(url+path,requestMethod,*args,**DataAll)
+                if expectedresult.lower() == 'true':
+                    result = self.text.get('result')
+                    self.assertEqual(result,True)
+                else:
+                    errorMessage = self.text.get(u'errorMessage')
+                    self.assertEqual(errorMessage, expectedresult)
+            else:
+                #使用其他接口返回的数据
+                response=base.get_response(other_url+other_path,other_method,**other_dataAll)
+                expect=other_data['expect']
+                rep=[n for n in range(len(expect))]
+                for i in range(len(expect)):
+                    s=expect[i].split('/')
+                    r=response.get(s[0])
+                    if len(s)==1:
+                        rep[i]=r
+                    else:
+                        for j in range(1,len(s)):
+                            rep[i]=r.get(s[i])
+                DataAll = eval(requestData)
+                self.text = base.get_response(url+path,requestMethod,*args,**DataAll)
+                if expectedresult.lower() == 'true':
+                    result = self.text.get('result')
+                    self.assertEqual(result,True)
+                else:
+                    errorMessage = self.text.get(u'errorMessage')
+                    self.assertEqual(errorMessage, expectedresult)
+        else:
+            DataAll = eval(requestData)
+            self.text = base.get_response(url+path,requestMethod,*args,**DataAll)
+            if expectedresult.lower() == 'true':
+                result = self.text.get('result')
+                self.assertEqual(result,True)
+            else:
+                errorMessage = self.text.get(u'errorMessage')
+                self.assertEqual(errorMessage, expectedresult)
 
     def tearDown(self):
-        pass
+        print(self.text)
 
 if __name__ == "__main__":
     unittest.main()

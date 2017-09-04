@@ -57,14 +57,14 @@ def md5(s):
     m.update(s.encode(encoding="utf-8"))
     return m.hexdigest()
 
-def get_response(url,RequestMethod,**DataAll):
+def get_response(url,RequestMethod,*args,**DataAll):
     RequestMethod = RequestMethod.lower()
     if RequestMethod == 'get':
-        text = HttpService.MyHTTP().get(url, **DataAll)
+        text = HttpService.MyHTTP().get(url,*args ,**DataAll)
     elif RequestMethod == 'post':
-        text = HttpService.MyHTTP().post(url, **DataAll)
+        text = HttpService.MyHTTP().post(url,*args, **DataAll)
     elif RequestMethod == 'delete':
-        text = HttpService.MyHTTP().delete(url, **DataAll)
+        text = HttpService.MyHTTP().delete(url,*args,**DataAll)
     return text
 
 def get_url(EndPoint):

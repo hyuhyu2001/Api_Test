@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ling Ling Bang Interface Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Ling Ling Bang Interface Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-06-29 15:35:39</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:03.989507</p>
+<p class='attribute'><strong>Status:</strong> Pass 19</p>
+
+<p class='description'>The results are following:</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)' class="btn btn-xs btn-primary">Summary</a>
+<a href='javascript:showCase(1)' class="btn btn-xs btn-danger">Failed</a>
+<a href='javascript:showCase(2)' class="btn btn-xs btn-info">All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>AllTestCase.AccountUserLogin: 接口自动化测试</td>
+    <td>19</td>
+    <td>19</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',19)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_10_正常获取我发的问题贴</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: {'result': True, 'data': [{'postId': 45556, 'forwardPostId': 0, 'postTypeId': 1, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"测试啥"}]', 'status': 1, 'postShowCount': 31, 'postShowRealCount': 4, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 1, 'isPublic': 1, 'userId': 1023886, 'creationDate': 1496395346000, 'lastModifyedDate': 1496819282000, 'operatorUserId': 1024865, 'operatorDesc': 0, 'channelId': 306, 'channelName': '深夜魅影', 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['测试啥'], 'imgTexts': [{'text': '测试啥'}]}, {'postId': 45369, 'forwardPostId': 0, 'postTypeId': 1, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"提问帖?还是f000good"},{"text":"bbb","img":"T1cVKTBCJT1RCvBVdK.jpg"}]', 'status': 1, 'postShowCount': 72, 'postShowRealCount': 8, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1493261878000, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 577, 'channelName': '常德市', 'postPraiseCount': 1, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['提问帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '提问帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45341, 'forwardPostId': 0, 'postTypeId': 1, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"提问帖?还是f000good"},{"text":"bbb","img":"T1cVKTBCJT1RCvBVdK.jpg"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1492505012000, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 577, 'channelName': '常德市', 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['提问帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '提问帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45293, 'forwardPostId': 0, 'postTypeId': 1, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"提问帖?还是f000good"},{"img":"T1cVKTBCJT1RCvBVdK.jpg","text":"bbb"}]', 'status': 1, 'postShowCount': 36, 'postShowRealCount': 4, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1491813257000, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 577, 'channelName': '常德市', 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['提问帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '提问帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45287, 'forwardPostId': 0, 'postTypeId': 1, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"提问帖?还是f000good"},{"text":"bbb","img":"T1cVKTBCJT1RCvBVdK.jpg"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1491812022000, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 577, 'channelName': '常德市', 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['提问帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '提问帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}], 'systemDate': '2017-06-29 15:35:54', 'systemTimeMillis': 1498721754361}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_11_无token时获取我发的问题贴</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: {'result': False, 'errorCode': '-40009', 'errorMessage': 'token不能为空!', 'systemDate': '2017-06-29 15:35:54', 'systemTimeMillis': 1498721754418}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_12_正常获取我发的老司机帖</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: {'result': True, 'data': [{'postId': 45548, 'forwardPostId': 0, 'postTypeId': 3, 'channelInfoId': 1, 'rewardId': 0, 'postLabelId': 15, 'postContent': '[{"text":"环境健康家"}]', 'status': 1, 'postShowCount': 17, 'postShowRealCount': 2, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1495509623000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['环境健康家'], 'imgTexts': [{'text': '环境健康家'}]}, {'postId': 45544, 'forwardPostId': 0, 'postTypeId': 3, 'channelInfoId': 1, 'rewardId': 0, 'postLabelId': 15, 'postContent': '[{"text":"回家就据","type":0}]', 'status': 1, 'postShowCount': 26, 'postShowRealCount': 2, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1495461144000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['回家就据'], 'imgTexts': [{'text': '回家就据'}]}, {'postId': 45543, 'forwardPostId': 0, 'postTypeId': 3, 'channelInfoId': 1, 'rewardId': 0, 'postLabelId': 15, 'postContent': '[{"text":"大家打家劫舍"}]', 'status': 1, 'postShowCount': 12, 'postShowRealCount': 1, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1495461060000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['大家打家劫舍'], 'imgTexts': [{'text': '大家打家劫舍'}]}, {'postId': 45542, 'forwardPostId': 0, 'postTypeId': 3, 'channelInfoId': 1, 'rewardId': 0, 'postLabelId': 18, 'postContent': '[{"text":"好滴好滴和","type":0}]', 'status': 1, 'postShowCount': 32, 'postShowRealCount': 3, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1495443755000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 1, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['好滴好滴和'], 'imgTexts': [{'text': '好滴好滴和'}]}, {'postId': 45532, 'forwardPostId': 0, 'postTypeId': 3, 'channelInfoId': 1, 'rewardId': 0, 'postLabelId': 16, 'postContent': '[{"text":"符合健康快乐的时尚感"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1495437481000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['符合健康快乐的时尚感'], 'imgTexts': [{'text': '符合健康快乐的时尚感'}]}], 'systemDate': '2017-06-29 15:35:54', 'systemTimeMillis': 1498721754670}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_13_正常发图文帖</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        pass</a>
+
+    <div id='div_pt1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.4: {'result': True, 'data': {'postId': 45568, 'forwardPostId': 0, 'postTypeId': 0, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1498721754913, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 306}, 'systemDate': '2017-06-29 15:35:54', 'systemTimeMillis': 1498721754969}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_14_正常签到</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
+        pass</a>
+
+    <div id='div_pt1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.5: {'result': True, 'data': {'commodityId': 57, 'awardCount': 160, 'currentAwardCount': 30, 'image': 'https://dftest.00bang.net/images/T1GRZTB4Yv1RCvBVdK.png', 'name': '金币', 'exchangeCount': 800, 'type': 2}, 'systemDate': '2017-06-29 15:35:55', 'systemTimeMillis': 1498721755179}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_15_token为空签到</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
+        pass</a>
+
+    <div id='div_pt1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.6: {'result': False, 'errorCode': '-40009', 'errorMessage': 'token不能为空!', 'systemDate': '2017-06-29 15:35:55', 'systemTimeMillis': 1498721755243}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_16_错误token签到</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
+        pass</a>
+
+    <div id='div_pt1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.7: {'result': False, 'errorCode': '40040', 'errorMessage': '权限认证失败!', 'systemDate': '2017-06-29 15:35:55', 'systemTimeMillis': 1498721755298}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_17_重复签到</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.8')" >
+        pass</a>
+
+    <div id='div_pt1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.8: {'result': False, 'errorCode': '50047', 'errorMessage': '今日已签到', 'systemDate': '2017-06-29 15:35:55', 'systemTimeMillis': 1498721755473}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_18_正常下订单</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.9')" >
+        pass</a>
+
+    <div id='div_pt1.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.9: {'result': True, 'data': {'orderId': 779, 'orderSn': '1706293886880002', 'totalAmount': 1.0, 'amount': 1, 'payAmount': 1, 'createUserId': 1023886, 'signForPay': '9795f41f40d4fb38bd524163a5321f3a'}, 'systemDate': '2017-06-29 15:35:55', 'systemTimeMillis': 1498721755800}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_19_正常注册</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.10')" >
+        pass</a>
+
+    <div id='div_pt1.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.10: {'result': True, 'data': {'userId': 1152199, 'roleId': 1, 'channelInfoId': 1, 'nickname': 'qwersdf', 'mobile': '15812345678', 'encodeMobile': '7222ae8068a4df5f189eb9f82642885b', 'cityId': 1, 'carTypeId': 2, 'userType': 0, 'sex': 1, 'photo': 'T1xthTBKZv1RCvBVdK.jpg', 'birthday': 625852800000, 'status': 1, 'creationDate': 1498721756000, 'token': '054aa365c4714f069d4b604c4b9d6510', 'userIdStr': 'MTE1MjE5OQ==', 'deviceType': 'unknown', 'deviceModel': 'unknown', 'deviceImsi': 'unknown', 'deviceImei': 'unknown', 'platformNo': 'unknown', 'loginType': 0, 'regPlatform': 'llb', 'regAppClient': 'llb', 'loginChannelInfoId': 1, 'loginPlatform': 'llb', 'loginAppClient': 'llb', 'birthdayStr': '1989-11-01', 'awardCoin': 250, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 0, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'systemDate': '2017-06-29 15:35:56', 'systemTimeMillis': 1498721756451}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_1_正常获取手机通讯录</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.11')" >
+        pass</a>
+
+    <div id='div_pt1.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.11: {'result': True, 'data': [{'userId': 1032769, 'roleId': 1, 'channelInfoId': 1, 'nickname': '我OK了?', 'mobile': '15810293081', 'encodeMobile': 'b58623d3122b9d6457c6534ada26bd69', 'cityId': 302, 'carTypeId': 32, 'userType': 0, 'sex': 2, 'photo': 'https://dftest.00bang.net/images/T1b.ETBXxT1RCvBVdK.jpg', 'birthday': 538675200000, 'status': 1, 'creationDate': 1477032564000, 'lastModifyedDate': 1477032564000, 'userIdStr': 'MTAzMjc2OQ==', 'regPlatform': 'llb', 'regAppClient': 'llb', 'birthdayStr': '1987-01-27', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 0, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}], 'systemDate': '2017-06-29 15:35:56', 'systemTimeMillis': 1498721756852}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_2_正常登陆</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.12')" >
+        pass</a>
+
+    <div id='div_pt1.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.12: {'result': True, 'data': {'roleId': 1, 'channelInfoId': 1, 'nickname': '闲人gg啊啊kjj', 'mobile': '15210110149', 'encodeMobile': 'bef31019c1d1bfc43bc1f89c6a060aa8', 'cityId': 18, 'carTypeId': 2, 'userType': 0, 'sex': 2, 'photo': 'https://dftest.00bang.net/images/T1SZKTB4VT1RCvBVdK.jpg', 'birthday': 702403200000, 'status': 1, 'creationDate': 1458975074000, 'lastModifyedDate': 1477023950000, 'token': '16419c6e66454fd4a1732697f4b3810b', 'userIdStr': 'MTAwMTc1Nw==', 'regPlatform': 'llb', 'regAppClient': 'llb', 'birthdayStr': '1992-04-05', 'carTypeStr': '宝骏610 CROSS', 'approveRealName': '军字第1236854号', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 1, 'isFriend': 0, 'isShopSales': 0, 'friendsCount': 16, 'postCount': 148, 'collectPostCount': 23, 'communityCount': 16, 'checkStatus': 2, 'maintainDiffdays': -1, 'memberChannelId': 298}, 'systemDate': '2017-06-29 15:35:57', 'systemTimeMillis': 1498721757001}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_3_登陆手机号不能为空!</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.13')" >
+        pass</a>
+
+    <div id='div_pt1.13' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.13: {'result': False, 'errorCode': '40002', 'errorMessage': '手机号不能为空!', 'systemDate': '2017-06-29 15:35:57', 'systemTimeMillis': 1498721757061}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_4_登陆密码不能为空!</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.14')" >
+        pass</a>
+
+    <div id='div_pt1.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.14: {'result': False, 'errorCode': '40003', 'errorMessage': '密码不能为空!', 'systemDate': '2017-06-29 15:35:57', 'systemTimeMillis': 1498721757131}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_5_登陆密码错误!</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.15')" >
+        pass</a>
+
+    <div id='div_pt1.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.15: {'result': False, 'errorCode': '40051', 'errorMessage': '密码错误!', 'systemDate': '2017-06-29 15:35:57', 'systemTimeMillis': 1498721757177}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_6_未登陆获取社区首页</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.16')" >
+        pass</a>
+
+    <div id='div_pt1.16' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.16').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.16: {'result': True, 'data': {'postCount': 0, 'channelTypes': [{'channelTypeId': 1, 'channelTypeName': '同车邦', 'channelTypeDesc': '车型社区', 'createUserId': 1000088, 'creationDate': 1463073453000, 'status': 1, 'icon': 'https://dftest.00bang.net/images/images/2016/05/13/011731026714.png', 'visible': 1, 'allowCreate': 1, 'lastModifyedDate': 1496904068000, 'upperLimit': 3, 'channels': [{'channelId': 994, 'channelName': '测试社区560', 'channelDesc': '司法所发生', 'channelFavicon': 'https://dftest.00bang.net/images/T1nCKTBCdT1RCvBVdK.jpg', 'memberCount': 78, 'postCount': 109}, {'channelId': 295, 'channelName': '宝骏乐驰', 'channelDesc': '宝骏乐驰车主聚集地', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/041054096915.jpg', 'memberCount': 719, 'postCount': 218}, {'channelId': 1020, 'channelName': '宝骏310', 'channelDesc': '对方水电费', 'channelFavicon': 'https://dftest.00bang.net/images/T1YthTBCET1RCvBVdK.jpg', 'memberCount': 44, 'postCount': 18}], 'more': 1}, {'channelTypeId': 2, 'channelTypeName': '同城邦', 'channelTypeDesc': '等', 'createUserId': 1000088, 'creationDate': 1463073595000, 'status': 1, 'icon': 'https://dftest.00bang.net/images/T14.ETByhT1RCvBVdK.png', 'visible': 1, 'allowCreate': 1, 'lastModifyedDate': 1496904068000, 'upperLimit': 6, 'channels': [{'channelId': 28, 'channelName': '陕西宝骏730车友会', 'channelDesc': '马帮招人，速度报名。。。。', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/01/12/154336093519.jpg', 'memberCount': 65, 'postCount': 66}, {'channelId': 30, 'channelName': '内蒙老白车友邦', 'channelDesc': '车是可以换，车友是一辈子的…', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/05/21/074621024228.jpg', 'memberCount': 58, 'postCount': 83}, {'channelId': 32, 'channelName': '山西车友帮', 'channelDesc': '山西车友圈子', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/01/12/183309067796.jpg', 'memberCount': 14, 'postCount': 18}, {'channelId': 34, 'channelName': '临沂宝骏730车友会', 'channelDesc': '临沂宝骏730车友会，QQ群同步！', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/02/09/102406014494.jpg', 'memberCount': 88, 'postCount': 87}, {'channelId': 36, 'channelName': '青岛宝骏730车友会', 'channelDesc': '五菱宝骏专属车友会，车友兄弟们快来', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/01/13/005617099472.jpg', 'memberCount': 82, 'postCount': 57}, {'channelId': 41, 'channelName': '临沂五菱之光车友会', 'channelDesc': '欢迎各位车友来到这里记录我们的用建设', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/07/27/215643034202.jpg', 'memberCount': 147, 'postCount': 453}], 'more': 1}]}, 'systemDate': '2017-06-29 15:35:57', 'systemTimeMillis': 1498721757261}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_7_已登陆获取社区首页</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.17')" >
+        pass</a>
+
+    <div id='div_pt1.17' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.17').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.17: {'result': True, 'data': {'postCount': 0, 'attendChannels': [{'channelId': 378, 'channelName': '哈尔滨', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/08/02/191206092311.jpg', 'memberCount': 338, 'postCount': 89, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 297, 'channelName': '五菱荣光', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/035701070796.jpg', 'memberCount': 1032, 'postCount': 321, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 577, 'channelName': '常德市', 'channelFavicon': 'https://dftest.00bang.net/images/T1xthTBKZv1RCvBVdK.jpg', 'memberCount': 23, 'postCount': 204, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 998, 'channelName': '健健康康', 'channelFavicon': 'https://dftest.00bang.net/images/T10CKTB4LT1RCvBVdK.jpg', 'memberCount': 1, 'postCount': 1, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 406, 'channelName': '唐山', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/08/02/191642076486.jpg', 'memberCount': 32, 'postCount': 67, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 1005, 'channelName': '技监局', 'channelFavicon': 'https://dftest.00bang.net/images/T1PEKTB4hT1RCvBVdK.jpg', 'memberCount': 1, 'postCount': 1, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 293, 'channelName': '宝骏630', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/035745004189.jpg', 'memberCount': 1234, 'postCount': 940, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 1014, 'channelName': '风风光光个', 'channelFavicon': 'https://dftest.00bang.net/images/T1eyJTByCv1RCvBVdK.jpg', 'memberCount': 2, 'postCount': 5, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 298, 'channelName': '五菱之光', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/040338070428.png', 'memberCount': 1300, 'postCount': 459, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 93, 'channelName': '大庆宝骏560车友会', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/01/21/122752004441.jpg', 'memberCount': 184, 'postCount': 286, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 128, 'channelName': '哈尔滨冰城马帮560大队车友会', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/01/22/200533031287_239x240.jpg', 'memberCount': 2766, 'postCount': 502, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 605, 'channelName': '北京', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/08/03/162251007817.jpg', 'memberCount': 526, 'postCount': 118, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 294, 'channelName': '宝骏730', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/040751001984.jpg', 'memberCount': 5313, 'postCount': 5063, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 285, 'channelName': '厂商在线', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/043250075016.jpg', 'memberCount': 184, 'postCount': 56, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 306, 'channelName': '深夜魅影', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/05/13/031330083168.jpg', 'memberCount': 93, 'postCount': 545, 'unReadCount': 1, 'isAttended': 1}, {'channelId': 286, 'channelName': '菱菱邦', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/043110077370.png', 'memberCount': 229, 'postCount': 338, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 41, 'channelName': '临沂五菱之光车友会', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/07/27/215643034202.jpg', 'memberCount': 147, 'postCount': 453, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 296, 'channelName': '五菱宏光', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/035521060722.jpg', 'memberCount': 3844, 'postCount': 3307, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 995, 'channelName': '宝骏610', 'channelFavicon': 'https://dftest.00bang.net/images/T1pyJTB7__1RCvBVdK.png', 'memberCount': 51, 'postCount': 3, 'unReadCount': 0, 'isAttended': 1}], 'channelTypes': [{'channelTypeId': 1, 'channelTypeName': '同车邦', 'channelTypeDesc': '车型社区', 'createUserId': 1000088, 'creationDate': 1463073453000, 'status': 1, 'icon': 'https://dftest.00bang.net/images/images/2016/05/13/011731026714.png', 'visible': 1, 'allowCreate': 1, 'lastModifyedDate': 1496904068000, 'upperLimit': 3, 'channels': [{'channelId': 994, 'channelName': '测试社区560', 'channelDesc': '司法所发生', 'channelFavicon': 'https://dftest.00bang.net/images/T1nCKTBCdT1RCvBVdK.jpg', 'memberCount': 78, 'postCount': 109, 'isAttended': 0}, {'channelId': 295, 'channelName': '宝骏乐驰', 'channelDesc': '宝骏乐驰车主聚集地', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/041054096915.jpg', 'memberCount': 719, 'postCount': 218, 'isAttended': 0}, {'channelId': 1020, 'channelName': '宝骏310', 'channelDesc': '对方水电费', 'channelFavicon': 'https://dftest.00bang.net/images/T1YthTBCET1RCvBVdK.jpg', 'memberCount': 44, 'postCount': 18, 'isAttended': 0}], 'more': 1}, {'channelTypeId': 2, 'channelTypeName': '同城邦', 'channelTypeDesc': '等', 'createUserId': 1000088, 'creationDate': 1463073595000, 'status': 1, 'icon': 'https://dftest.00bang.net/images/T14.ETByhT1RCvBVdK.png', 'visible': 1, 'allowCreate': 1, 'lastModifyedDate': 1496904068000, 'upperLimit': 6, 'channels': [{'channelId': 605, 'channelName': '北京', 'channelDesc': '北京是首批国家历史文化名城和世界上拥有世界文化遗产数最多的城市', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/08/03/162251007817.jpg', 'memberCount': 526, 'postCount': 118, 'isAttended': 1}, {'channelId': 1, 'channelName': '改装牛人汇', 'channelDesc': '用心装扮我的爱车，怎么美怎么晒~', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/01/11/143357076789.jpg', 'memberCount': 124, 'postCount': 6, 'isAttended': 0}, {'channelId': 22, 'channelName': '事故警惕', 'channelDesc': '安全出行，用心提示', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/01/11/201225041248.jpg', 'memberCount': 40, 'postCount': 27, 'isAttended': 0}, {'channelId': 310, 'channelName': '北京宝骏310车友会', 'channelDesc': '欢迎大家一起交流嘿嘿', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/05/16/162551091596_239x240.jpg', 'memberCount': 26, 'postCount': 23, 'isAttended': 0}, {'channelId': 316, 'channelName': '北京宝骏730车友会', 'channelDesc': '北京宝骏730车友会是您温馨舒适的家', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/05/20/191619090282_240x240.jpg', 'memberCount': 29, 'postCount': 26, 'isAttended': 0}, {'channelId': 987, 'channelName': '喜欢大学法学院派人生第一次看到的是否能够', 'channelDesc': '不保护好', 'channelFavicon': 'https://dftest.00bang.net/images/T1.tJTBbLv1RCvBVdK.jpg', 'memberCount': 3, 'postCount': 5, 'isAttended': 0}], 'more': 1}]}, 'systemDate': '2017-06-29 15:35:57', 'systemTimeMillis': 1498721757565}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_8_错误token获取社区首页</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.18')" >
+        pass</a>
+
+    <div id='div_pt1.18' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.18').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.18: {'result': False, 'errorCode': '40040', 'errorMessage': '权限认证失败!', 'systemDate': '2017-06-29 15:35:57', 'systemTimeMillis': 1498721757629}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.19' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_9_正常获取我发的技师帖</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.19')" >
+        pass</a>
+
+    <div id='div_pt1.19' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.19').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.19: {'result': True, 'data': [{'postId': 45553, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 0, 'carTypeId': 26, 'postLabelId': 1, 'postContent': '[{"text":"规划局"}]', 'status': 1, 'postShowCount': 13, 'postShowRealCount': 1, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1495509889000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['规划局'], 'imgTexts': [{'text': '规划局'}]}, {'postId': 45549, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 0, 'carTypeId': 33, 'postLabelId': 1, 'postContent': '[{"text":"哈哈哈哈"}]', 'status': 1, 'postShowCount': 26, 'postShowRealCount': 2, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1495509674000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': [], 'imgWidths': [], 'imgHeights': [], 'texts': ['哈哈哈哈'], 'imgTexts': [{'text': '哈哈哈哈'}]}, {'postId': 45372, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 2, 'carTypeId': 32, 'postLabelId': 3, 'postContent': '[{"text":"技师帖?还是f000good"},{"text":"bbb","img":"T1cVKTBCJT1RCvBVdK.jpg"}]', 'status': 1, 'postShowCount': 6, 'postShowRealCount': 1, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1493261879000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45371, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 3, 'carTypeId': 32, 'postLabelId': 4, 'postContent': '[{"text":"技师帖?还是f000good"},{"text":"bbb","img":"T1cVKTBCJT1RCvBVdK.jpg"}]', 'status': 1, 'postShowCount': 12, 'postShowRealCount': 1, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1493261878000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45368, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 32, 'postLabelId': 2, 'postContent': '[{"text":"技师帖?还是f000good"},{"text":"bbb","img":"T1cVKTBCJT1RCvBVdK.jpg"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1493261877000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45367, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 0, 'carTypeId': 32, 'postLabelId': 1, 'postContent': '[{"text":"技师帖?还是f000good"},{"text":"bbb","img":"T1cVKTBCJT1RCvBVdK.jpg"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1493261877000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45343, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 3, 'carTypeId': 32, 'postLabelId': 4, 'postContent': '[{"text":"技师帖?还是f000good"},{"text":"bbb","img":"T1cVKTBCJT1RCvBVdK.jpg"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1492505013000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45340, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 32, 'postLabelId': 2, 'postContent': '[{"text":"技师帖?还是f000good"},{"text":"bbb","img":"T1cVKTBCJT1RCvBVdK.jpg"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1492505012000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45339, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 0, 'carTypeId': 32, 'postLabelId': 1, 'postContent': '[{"text":"技师帖?还是f000good"},{"text":"bbb","img":"T1cVKTBCJT1RCvBVdK.jpg"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1492505010000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45296, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 2, 'carTypeId': 32, 'postLabelId': 3, 'postContent': '[{"text":"技师帖?还是f000good"},{"img":"T1cVKTBCJT1RCvBVdK.jpg","text":"bbb"}]', 'status': 1, 'postShowCount': 56, 'postShowRealCount': 6, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1491813260000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45295, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 3, 'carTypeId': 32, 'postLabelId': 4, 'postContent': '[{"text":"技师帖?还是f000good"},{"img":"T1cVKTBCJT1RCvBVdK.jpg","text":"bbb"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1491813259000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45292, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 32, 'postLabelId': 2, 'postContent': '[{"text":"技师帖?还是f000good"},{"img":"T1cVKTBCJT1RCvBVdK.jpg","text":"bbb"}]', 'status': 1, 'postShowCount': 3, 'postShowRealCount': 2, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1491813257000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45291, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 0, 'carTypeId': 32, 'postLabelId': 1, 'postContent': '[{"text":"技师帖?还是f000good"},{"img":"T1cVKTBCJT1RCvBVdK.jpg","text":"bbb"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1491813255000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45290, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 2, 'carTypeId': 32, 'postLabelId': 3, 'postContent': '[{"text":"技师帖?还是f000good"},{"text":"bbb","img":"T1cVKTBCJT1RCvBVdK.jpg"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1491812023000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45289, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 3, 'carTypeId': 32, 'postLabelId': 4, 'postContent': '[{"text":"技师帖?还是f000good"},{"text":"bbb","img":"T1cVKTBCJT1RCvBVdK.jpg"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1491812022000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45286, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 32, 'postLabelId': 2, 'postContent': '[{"text":"技师帖?还是f000good"},{"text":"bbb","img":"T1cVKTBCJT1RCvBVdK.jpg"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1491812021000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45285, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 0, 'carTypeId': 32, 'postLabelId': 1, 'postContent': '[{"text":"技师帖?还是f000good"},{"text":"bbb","img":"T1cVKTBCJT1RCvBVdK.jpg"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1491812020000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45265, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 2, 'carTypeId': 32, 'postLabelId': 3, 'postContent': '[{"text":"技师帖?还是f000good"},{"img":"T1cVKTBCJT1RCvBVdK.jpg","text":"bbb"}]', 'status': 1, 'postShowCount': 6, 'postShowRealCount': 1, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1490928242000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45264, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 3, 'carTypeId': 32, 'postLabelId': 4, 'postContent': '[{"text":"技师帖?还是f000good"},{"img":"T1cVKTBCJT1RCvBVdK.jpg","text":"bbb"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1490928241000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}, {'postId': 45261, 'forwardPostId': 0, 'postTypeId': 2, 'channelInfoId': 1, 'rewardId': 1, 'carTypeId': 32, 'postLabelId': 2, 'postContent': '[{"text":"技师帖?还是f000good"},{"img":"T1cVKTBCJT1RCvBVdK.jpg","text":"bbb"}]', 'status': 1, 'postShowCount': 2, 'postShowRealCount': 1, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1490928240000, 'operatorUserId': 0, 'operatorDesc': 0, 'postPraiseCount': 0, 'postCommentCount': 0, 'isPraise': 0, 'author': {'nickname': '新街口', 'photo': 'https://dftest.00bang.net/images/T1lEKTB5dT1RCvBVdK.jpg', 'userIdStr': 'MTAyMzg4Ng==', 'carTypeStr': '宝骏310', 'cityStr': '北京', 'provinceStr': '北京', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 1, 'techUser': 1, 'authGrade': 0, 'isFriend': 0, 'isShopSales': 0}, 'images': ['https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg'], 'imgWidths': [], 'imgHeights': [], 'texts': ['技师帖?还是f000good', 'bbb'], 'imgTexts': [{'text': '技师帖?还是f000good'}, {'img': 'https://dftest.00bang.net/images/T1cVKTBCJT1RCvBVdK.jpg', 'text': 'bbb'}]}], 'systemDate': '2017-06-29 15:35:57', 'systemTimeMillis': 1498721757982}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>19</td>
+    <td class="text text-success">19</td>
+    <td class="text text-danger">0</td>
+    <td class="text text-warning">0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

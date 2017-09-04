@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ling Ling Bang Interface Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Ling Ling Bang Interface Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-06-29 11:18:02</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:09.175665</p>
+<p class='attribute'><strong>Status:</strong> Pass 13 Failure 6</p>
+
+<p class='description'>The results are following:</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)' class="btn btn-xs btn-primary">Summary</a>
+<a href='javascript:showCase(1)' class="btn btn-xs btn-danger">Failed</a>
+<a href='javascript:showCase(2)' class="btn btn-xs btn-info">All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='failClass'>
+    <td>AllTestCase.AccountUserLogin: 登陆测试</td>
+    <td>19</td>
+    <td>13</td>
+    <td>6</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',19)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_llb_10___community_post_myQaPosts____get__________headers____token__token___params____type______pageNo______pageSize____________token___token___mobile__15810293085__password__1_____True________1____5____channel____正常获取我发的问题贴__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        fail</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: get错误：Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+{}
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\AllTestCase.py", line 99, in test_llb
+    self.assertEqual(result,True)
+AssertionError: None != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_11___community_post_myQaPosts____get__________headers____token__token___params____type______pageNo______pageSize____________token_________token不能为空_________1____5____tech____无token时获取我发的问题贴__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: {'result': False, 'errorCode': '-40009', 'errorMessage': 'token不能为空!', 'data': None, 'systemDate': '2017-06-29 11:18:19', 'systemTimeMillis': 1498706299097}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_llb_12___community_post_myQaPosts____get__________headers____token__token___params____type______pageNo______pageSize____________token___token___mobile__15810293085__password__1_____True________1____5____driver____正常获取我发的老司机帖__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
+        fail</a>
+
+    <div id='div_ft1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.3: get错误：Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+{}
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\AllTestCase.py", line 99, in test_llb
+    self.assertEqual(result,True)
+AssertionError: None != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_13___community_post_pubPost____post__________headers____token__token__deviceType___ios___platformNo___iphone____json____channelId______imgTexts___arry___postTypeId______rewardTypeId______carTypeId______postLabelId____________token___token___mobile__15810293085__password__1_____True____________306_______text____超级便宜的衣服特卖了f000good_____img____T1tVKTB4bT1RCvBVdK_jpg____width____922____height____1280____text____大家快来看啦_顶顶顶___________0________正常发图文帖__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        pass</a>
+
+    <div id='div_pt1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.4: {'result': True, 'data': {'postId': 51471, 'forwardPostId': 0, 'postTypeId': 0, 'channelInfoId': 1, 'rewardId': 0, 'postContent': '[{"text":"超级便宜的衣服特卖了f000good"},{"img":"T1tVKTB4bT1RCvBVdK.jpg","width":"922","height":"1280","text":"大家快来看啦，顶顶顶"}]', 'status': 1, 'postShowCount': 1, 'postShowRealCount': 0, 'postShareCount': 0, 'postForwardCount': 0, 'isTop': 0, 'isElite': 0, 'isRecommend': 0, 'isPublic': 0, 'userId': 1023886, 'creationDate': 1498706300962, 'operatorUserId': 0, 'operatorDesc': 0, 'channelId': 306, 'moreLabel': False}, 'systemDate': '2017-06-29 11:18:21', 'systemTimeMillis': 1498706301573}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_14___account_dailySign____get__________headers____token__token________token___token___mobile__15810293089__password__1_____True________正常签到__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
+        pass</a>
+
+    <div id='div_pt1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.5: {'result': True, 'data': {'commodityId': 57, 'awardCount': 10, 'currentAwardCount': 10, 'image': 'https://dftest.00bang.net/images/T1GRZTB4Yv1RCvBVdK.png', 'name': '金币', 'exchangeCount': 800, 'type': 2}, 'systemDate': '2017-06-29 11:18:22', 'systemTimeMillis': 1498706302662}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_15___account_dailySign____get__________headers____token__token________token_________token不能为空_________token为空签到__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
+        pass</a>
+
+    <div id='div_pt1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.6: {'result': False, 'errorCode': '-40009', 'errorMessage': 'token不能为空!', 'data': None, 'systemDate': '2017-06-29 11:18:22', 'systemTimeMillis': 1498706302733}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_16___account_dailySign____get__________headers____token__token________token___123456______权限认证失败_________错误token签到__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
+        pass</a>
+
+    <div id='div_pt1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.7: {'result': False, 'errorCode': '40040', 'errorMessage': '权限认证失败!', 'data': None, 'systemDate': '2017-06-29 11:18:22', 'systemTimeMillis': 1498706302813}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_17___account_dailySign____get__________headers____token__token________token___token___mobile__15810293089__password__1_____今日已签到________重复签到__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.8')" >
+        pass</a>
+
+    <div id='div_pt1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.8: {'result': False, 'errorCode': '50047', 'errorMessage': '今日已签到', 'systemDate': '2017-06-29 11:18:23', 'systemTimeMillis': 1498706303119}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.9' class='none'>
+    <td class='failCase'><div class='testcase'>test_llb_18___orderpay_order_create____post______endpoint___orderpay_order_signForCreateOrder___requestmethod___post___path______para____headers____token__token___data____couponId__64__commodityId__69__expectConsumeShopId__1__consumer___xxx___consumerMobile___15012345678___sellPrice__1__marketPrice__1____sql______expect____data___systemTimeMillis_________headers____token__token___data____couponId______commodityId______expectConsumeShopId______name______consumer______consumerMobile______sellPrice______marketPrice______sign__rep_0___systemTimeMillis__rep_1_________token___token___mobile__15810293085__password__1_____True________69____xxx____15012345678____64____1____1____云里雾里____1____res____res____正常下订单__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.9')" >
+        fail</a>
+
+    <div id='div_ft1.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.9: post错误：Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+post错误：Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+{}
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\AllTestCase.py", line 90, in test_llb
+    self.assertEqual(result,True)
+AssertionError: None != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.10' class='none'>
+    <td class='failCase'><div class='testcase'>test_llb_19___account_userRegister____get______endpoint___account_getRegisterSmsCode___requestmethod___get___path______para____headers____token__token___params____mobile__15812345678____sql___SELECT_captcha_from_llb_message_test2_captcha_where_mobile_15812345678_ORDER_BY_captcha_time_DESC_LIMIT_1________headers____token__token___params____mobile______nickname______cityId______carTypeId______sex______birthdayStr______password______smsCode__res__photo____________token_________True________1989_11_01____2____1____15812345678____qwersdf____1____T1xthTBKZv1RCvBVdK_jpg____1____res____正常注册__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.10')" >
+        fail</a>
+
+    <div id='div_ft1.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.10: {'result': False, 'errorCode': '40031', 'errorMessage': '验证码错误!', 'systemDate': '2017-06-29 11:18:24', 'systemTimeMillis': 1498706304002}
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\AllTestCase.py", line 69, in test_llb
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_1___account_getInvitedList____post__________headers____token__token___json___arry________token___token___mobile__15810293085__password__1_____True__________b58623d3122b9d6457c6534ada26bd69___ae428544070e6e96b65b0f3b64d77378______正常获取手机通讯录__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.11')" >
+        pass</a>
+
+    <div id='div_pt1.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.11: {'result': True, 'data': [{'userId': 1032769, 'roleId': 1, 'channelInfoId': 1, 'nickname': '我OK了?', 'mobile': '15810293081', 'encodeMobile': 'b58623d3122b9d6457c6534ada26bd69', 'cityId': 1, 'carTypeId': 32, 'userType': 0, 'sex': 1, 'photo': 'https://dftest.00bang.net/images/T1cCKTB4YT1RCvBVdK.jpg', 'birthday': 507139200000, 'status': 1, 'creationDate': 1477032564000, 'lastModifyedDate': 1477032564000, 'userIdStr': 'MTAzMjc2OQ==', 'regPlatform': 'llb', 'regAppClient': 'llb', 'birthdayStr': '1986-01-27', 'awardCoin': 0, 'distance': 0.0, 'userInfoCompletion': 2, 'carOwner': 0, 'techUser': 0, 'authGrade': 0, 'isFriend': 0, 'vehicleApprove': 0}], 'systemDate': '2017-06-29 11:18:24', 'systemTimeMillis': 1498706304480}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.12' class='none'>
+    <td class='failCase'><div class='testcase'>test_llb_2___account_userLogin____get__________headers____token__token___params_____password_______mobile_____________token_________True________15210110149____123456____正常登陆__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.12')" >
+        fail</a>
+
+    <div id='div_ft1.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.12: {'result': False, 'errorCode': '40051', 'errorMessage': '密码错误!', 'systemDate': '2017-06-29 11:18:24', 'systemTimeMillis': 1498706304659}
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\AllTestCase.py", line 99, in test_llb
+    self.assertEqual(result,True)
+AssertionError: False != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_3___account_userLogin____get__________headers____token__token___params_____password_______mobile_____________token_________手机号不能为空_____________123456____登陆手机号不能为空___</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.13')" >
+        pass</a>
+
+    <div id='div_pt1.13' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.13: {'result': False, 'errorCode': '40002', 'errorMessage': '手机号不能为空!', 'systemDate': '2017-06-29 11:18:24', 'systemTimeMillis': 1498706304711}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_4___account_userLogin____get__________headers____token__token___params_____password_______mobile_____________token_________密码不能为空_________15210110149________登陆密码不能为空___</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.14')" >
+        pass</a>
+
+    <div id='div_pt1.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.14: {'result': False, 'errorCode': '40003', 'errorMessage': '密码不能为空!', 'systemDate': '2017-06-29 11:18:24', 'systemTimeMillis': 1498706304771}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_5___account_userLogin____get__________headers____token__token___params_____password_______mobile_____________token_________密码错误_________15210110149____12dasd3____登陆密码错误___</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.15')" >
+        pass</a>
+
+    <div id='div_pt1.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.15: {'result': False, 'errorCode': '40051', 'errorMessage': '密码错误!', 'systemDate': '2017-06-29 11:18:24', 'systemTimeMillis': 1498706304859}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_6___community_channel_channelHome____get__________headers____token__token________token_________True________未登陆获取社区首页__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.16')" >
+        pass</a>
+
+    <div id='div_pt1.16' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.16').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.16: {'result': True, 'data': {'postCount': 18, 'channelTypes': [{'channelTypeId': 14, 'channelTypeName': '1', 'channelTypeDesc': '1', 'createUserId': 1032804, 'creationDate': 1497410564000, 'status': 1, 'icon': 'https://dftest.00bang.net/images/T1X.ETBXDT1RCvBVdK.jpg', 'visible': 1, 'allowCreate': 1, 'upperLimit': 1, 'channels': [], 'more': 0}, {'channelTypeId': 1, 'channelTypeName': '同车邦', 'channelTypeDesc': '车型社区', 'createUserId': 1000088, 'creationDate': 1463073453000, 'status': 1, 'icon': 'https://dftest.00bang.net/images/images/2016/05/13/011731026714.png', 'visible': 1, 'allowCreate': 1, 'lastModifyedDate': 1495079853000, 'upperLimit': 3, 'channels': [{'channelId': 994, 'channelName': '测试社区560', 'channelDesc': '司法所发生', 'channelFavicon': 'https://dftest.00bang.net/images/T1nCKTBCdT1RCvBVdK.jpg', 'memberCount': 70, 'postCount': 100}, {'channelId': 1020, 'channelName': '宝骏310', 'channelDesc': '对方水电费', 'channelFavicon': 'https://dftest.00bang.net/images/T1YthTBCET1RCvBVdK.jpg', 'memberCount': 46, 'postCount': 18}, {'channelId': 296, 'channelName': '五菱宏光', 'channelDesc': '五菱宏光车主聚集地', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/035521060722.jpg', 'memberCount': 3844, 'postCount': 3308}], 'more': 1}, {'channelTypeId': 2, 'channelTypeName': '同城邦', 'channelTypeDesc': '等', 'createUserId': 1000088, 'creationDate': 1463073595000, 'status': 1, 'icon': 'https://dftest.00bang.net/images/T14.ETByhT1RCvBVdK.png', 'visible': 1, 'allowCreate': 1, 'lastModifyedDate': 1495079853000, 'upperLimit': 6, 'channels': [{'channelId': 30, 'channelName': '内蒙老白车友邦', 'channelDesc': '车是可以换，车友是一辈子的…', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/05/21/074621024228.jpg', 'memberCount': 58, 'postCount': 83}, {'channelId': 32, 'channelName': '山西车友帮', 'channelDesc': '山西车友圈子', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/01/12/183309067796.jpg', 'memberCount': 14, 'postCount': 19}, {'channelId': 34, 'channelName': '临沂宝骏730车友会', 'channelDesc': '临沂宝骏730车友会，QQ群同步！', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/02/09/102406014494.jpg', 'memberCount': 88, 'postCount': 87}, {'channelId': 36, 'channelName': '青岛宝骏730车友会', 'channelDesc': '五菱宝骏专属车友会，车友兄弟们快来', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/01/13/005617099472.jpg', 'memberCount': 82, 'postCount': 57}, {'channelId': 38, 'channelName': '广东（广州）骏友会', 'channelDesc': '广东（广州）骏友会欢迎宝骏车友们畅所欲言', 'channelFavicon': 'https://dftest.00bang.net/images/T13aETBgAv1RCvBVdK.jpg', 'memberCount': 90, 'postCount': 141}, {'channelId': 41, 'channelName': '临沂五菱之光车友会', 'channelDesc': '欢迎各位车友来到这里记录我们的用建设', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/07/27/215643034202.jpg', 'memberCount': 147, 'postCount': 452}], 'more': 1}]}, 'systemDate': '2017-06-29 11:18:24', 'systemTimeMillis': 1498706304989}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_7___community_channel_channelHome____get__________headers____token__token________token___token___mobile__15810293085__password__1_____True________已登陆获取社区首页__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.17')" >
+        pass</a>
+
+    <div id='div_pt1.17' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.17').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.17: {'result': True, 'data': {'postCount': 18, 'attendChannels': [{'channelId': 297, 'channelName': '五菱荣光', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/035701070796.jpg', 'memberCount': 1034, 'postCount': 310, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 378, 'channelName': '哈尔滨', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/08/02/191206092311.jpg', 'memberCount': 338, 'postCount': 87, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 577, 'channelName': '常德市', 'channelFavicon': 'https://dftest.00bang.net/images/T1xthTBKZv1RCvBVdK.jpg', 'memberCount': 23, 'postCount': 207, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 998, 'channelName': '健健康康', 'channelFavicon': 'https://dftest.00bang.net/images/T10CKTB4LT1RCvBVdK.jpg', 'memberCount': 1, 'postCount': 2, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 406, 'channelName': '唐山', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/08/02/191642076486.jpg', 'memberCount': 32, 'postCount': 67, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 293, 'channelName': '宝骏630', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/035745004189.jpg', 'memberCount': 1234, 'postCount': 938, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 1005, 'channelName': '技监局', 'channelFavicon': 'https://dftest.00bang.net/images/T1PEKTB4hT1RCvBVdK.jpg', 'memberCount': 1, 'postCount': 1, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 1014, 'channelName': '风风光光个', 'channelFavicon': 'https://dftest.00bang.net/images/T1eyJTByCv1RCvBVdK.jpg', 'memberCount': 2, 'postCount': 5, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 298, 'channelName': '五菱之光', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/040338070428.png', 'memberCount': 1301, 'postCount': 459, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 128, 'channelName': '哈尔滨冰城马帮560大队车友会', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/01/22/200533031287_239x240.jpg', 'memberCount': 2766, 'postCount': 502, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 296, 'channelName': '五菱宏光', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/035521060722.jpg', 'memberCount': 3844, 'postCount': 3308, 'unReadCount': 1, 'isAttended': 1}, {'channelId': 41, 'channelName': '临沂五菱之光车友会', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/07/27/215643034202.jpg', 'memberCount': 147, 'postCount': 452, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 286, 'channelName': '菱菱邦', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/043110077370.png', 'memberCount': 229, 'postCount': 337, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 306, 'channelName': '深夜魅影', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/05/13/031330083168.jpg', 'memberCount': 93, 'postCount': 541, 'unReadCount': 7, 'isAttended': 1}, {'channelId': 285, 'channelName': '厂商在线', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/043250075016.jpg', 'memberCount': 184, 'postCount': 56, 'unReadCount': 0, 'isAttended': 1}, {'channelId': 294, 'channelName': '宝骏730', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/040751001984.jpg', 'memberCount': 5340, 'postCount': 5065, 'unReadCount': 1, 'isAttended': 1}, {'channelId': 605, 'channelName': '北京', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/08/03/162251007817.jpg', 'memberCount': 588, 'postCount': 122, 'unReadCount': 4, 'isAttended': 1}], 'channelTypes': [{'channelTypeId': 14, 'channelTypeName': '1', 'channelTypeDesc': '1', 'createUserId': 1032804, 'creationDate': 1497410564000, 'status': 1, 'icon': 'https://dftest.00bang.net/images/T1X.ETBXDT1RCvBVdK.jpg', 'visible': 1, 'allowCreate': 1, 'upperLimit': 1, 'channels': [], 'more': 0}, {'channelTypeId': 1, 'channelTypeName': '同车邦', 'channelTypeDesc': '车型社区', 'createUserId': 1000088, 'creationDate': 1463073453000, 'status': 1, 'icon': 'https://dftest.00bang.net/images/images/2016/05/13/011731026714.png', 'visible': 1, 'allowCreate': 1, 'lastModifyedDate': 1495079853000, 'upperLimit': 3, 'channels': [{'channelId': 994, 'channelName': '测试社区560', 'channelDesc': '司法所发生', 'channelFavicon': 'https://dftest.00bang.net/images/T1nCKTBCdT1RCvBVdK.jpg', 'memberCount': 70, 'postCount': 100, 'isAttended': 0}, {'channelId': 1020, 'channelName': '宝骏310', 'channelDesc': '对方水电费', 'channelFavicon': 'https://dftest.00bang.net/images/T1YthTBCET1RCvBVdK.jpg', 'memberCount': 46, 'postCount': 18, 'isAttended': 0}, {'channelId': 296, 'channelName': '五菱宏光', 'channelDesc': '五菱宏光车主聚集地', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/05/13/035521060722.jpg', 'memberCount': 3844, 'postCount': 3308, 'isAttended': 1}], 'more': 1}, {'channelTypeId': 2, 'channelTypeName': '同城邦', 'channelTypeDesc': '等', 'createUserId': 1000088, 'creationDate': 1463073595000, 'status': 1, 'icon': 'https://dftest.00bang.net/images/T14.ETByhT1RCvBVdK.png', 'visible': 1, 'allowCreate': 1, 'lastModifyedDate': 1495079853000, 'upperLimit': 6, 'channels': [{'channelId': 605, 'channelName': '北京', 'channelDesc': '北京是首批国家历史文化名城和世界上拥有世界文化遗产数最多的城市', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/08/03/162251007817.jpg', 'memberCount': 588, 'postCount': 122, 'isAttended': 1}, {'channelId': 1, 'channelName': '改装牛人汇', 'channelDesc': '用心装扮我的爱车，怎么美怎么晒~', 'channelFavicon': 'https://dftest.00bang.net/images/images/2016/01/11/143357076789.jpg', 'memberCount': 125, 'postCount': 6, 'isAttended': 0}, {'channelId': 310, 'channelName': '北京宝骏310车友会', 'channelDesc': '欢迎大家一起交流嘿嘿', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/05/16/162551091596_239x240.jpg', 'memberCount': 26, 'postCount': 23, 'isAttended': 0}, {'channelId': 316, 'channelName': '北京宝骏730车友会', 'channelDesc': '北京宝骏730车友会是您温馨舒适的家', 'channelFavicon': 'https://dftest.00bang.net/images/circle/2016/05/20/191619090282_240x240.jpg', 'memberCount': 30, 'postCount': 26, 'isAttended': 0}, {'channelId': 987, 'channelName': '喜欢大学法学院派人生第一次看到的是否能够', 'channelDesc': '不保护好', 'channelFavicon': 'https://dftest.00bang.net/images/T1.tJTBbLv1RCvBVdK.jpg', 'memberCount': 3, 'postCount': 5, 'isAttended': 0}, {'channelId': 991, 'channelName': 'I家家户户', 'channelDesc': '宝宝半年', 'channelFavicon': 'https://dftest.00bang.net/images/T1EtJTBbVv1RCvBVdK.jpg', 'memberCount': 1, 'postCount': 3, 'isAttended': 0}], 'more': 1}]}, 'systemDate': '2017-06-29 11:18:25', 'systemTimeMillis': 1498706305573}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_llb_8___community_channel_channelHome____get__________headers____token__token________token___123456______权限认证失败_________错误token获取社区首页__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.18')" >
+        pass</a>
+
+    <div id='div_pt1.18' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.18').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.18: {'result': False, 'errorCode': '40040', 'errorMessage': '权限认证失败!', 'data': None, 'systemDate': '2017-06-29 11:18:25', 'systemTimeMillis': 1498706305663}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.19' class='none'>
+    <td class='failCase'><div class='testcase'>test_llb_9___community_post_myQaPosts____get__________headers____token__token___params____type______pageNo______pageSize____________token___token___mobile__15810293085__password__1_____True________1________tech____正常获取我发的技师帖__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.19')" >
+        fail</a>
+
+    <div id='div_ft1.19' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.19').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.19: get错误：Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+{}
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 139, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_pycharmWorkspace\python36\Api_Test\test_case\AllTestCase.py", line 99, in test_llb
+    self.assertEqual(result,True)
+AssertionError: None != True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>19</td>
+    <td class="text text-success">13</td>
+    <td class="text text-danger">6</td>
+    <td class="text text-warning">0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
