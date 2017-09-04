@@ -6,13 +6,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="llbTest" />
     <orderEntry type="module" module-name="Training" />
-    <orderEntry type="module" module-name="python_study" />
-    <orderEntry type="module" module-name="python_study" />
     <orderEntry type="module" module-name="Monkey_automation" />
-    <orderEntry type="module" module-name="Web_Test_Selenium" />
     <orderEntry type="module" module-name="BBS_community_Selenium" />
     <orderEntry type="module" module-name="BBS_community_Selenium" />
-    <orderEntry type="module" module-name="Performance_Test" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />
