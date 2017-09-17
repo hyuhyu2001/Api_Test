@@ -33,22 +33,12 @@ def url():
 
 #测试环境数据库连接串
 sql_conn_dict = {
-    'host': '114.215.107.77',
-    'user':'cloudyoung',
-    'passwd':'cy@5408',
-    'port':5408,
-    'db':'llb_ucenter_test',
-    'charset':'utf8'
+
 }
 '''
 #正式环境数据库连接串
 sql_conn_dict = {
-    'host': 'wappdb008.mysql.rds.aliyuncs.com',
-    'user':'llb_db',
-    'passwd':'lLb_PwDa',
-    'port':3306,
-    'db':'llb_ucenter',
-    'charset':'utf8'
+
 }
 '''
 
