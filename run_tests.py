@@ -22,10 +22,10 @@ from public import SqlService
 def send_email(filename):
     mail_host='smtp.exmail.qq.com'#SMTP.cloud-young.com
     mail_user='********'
-    mail_pass='Jinzj1'
+    mail_pass='****'
 
-    sender='jinzj@cloud-young.com'
-    receivers=['jinzj@cloud-young.com']
+    sender='****'
+    receivers=['****']
 
     message = MIMEMultipart('related')
 
